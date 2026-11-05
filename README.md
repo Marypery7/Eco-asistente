@@ -29,11 +29,11 @@ El dataset contiene ejemplos elaborados para este proyecto, con las categorías 
 Puedes descargar el repositorio como ZIP desde el botón **Code → Download ZIP** de GitHub y descomprimirlo. También puedes clonarlo desde una terminal:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
-cd NOMBRE_DEL_REPOSITORIO
+git clone https://github.com/patomayi/proyecto-final-impulsia100h.git
+cd proyecto-final-impulsia100h
 ```
 
-Sustituye `URL_DEL_REPOSITORIO` y `NOMBRE_DEL_REPOSITORIO` por los datos de tu repositorio.
+El repositorio del proyecto es [patomayi/proyecto-final-impulsia100h](https://github.com/patomayi/proyecto-final-impulsia100h).
 
 ## Instalar y ejecutar
 
