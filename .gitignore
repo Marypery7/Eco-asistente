@@ -1,0 +1,15 @@
+# Entorno virtual de Python
+.venv/
+venv/
+
+# Archivos generados por Python y Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Documentación local que no se subirá al repositorio
+docs/
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
