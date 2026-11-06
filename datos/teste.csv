@@ -1,0 +1,85 @@
+residuo,tipo,categoria
+manzana,fruta,orgánico
+plátano,fruta,orgánico
+tomate,vegetal,orgánico
+lechuga,vegetal,orgánico
+batata,vegetal,orgánico
+posos de café,otro alimento,orgánico
+botella de plástico,envase ligero,envases
+brik de leche,envase ligero,envases
+lata de aluminio,envase ligero,envases
+botella de vidrio,envase de vidrio,vidrio
+tarro de vidrio,envase de vidrio,vidrio
+periódico de papel,papel o cartón,papel y cartón
+caja de cartón limpia,papel o cartón,papel y cartón
+vaso de cristal roto,objeto no envase,resto
+juguete roto de plástico,objeto no envase,resto
+naranja,fruta,orgánico
+ciruela,fruta,orgánico
+fresa,fruta,orgánico
+zanahoria,vegetal,orgánico
+pepino,vegetal,orgánico
+berenjena,vegetal,orgánico
+restos de lentejas cocinadas,otro alimento,orgánico
+sobras de puré,otro alimento,orgánico
+restos de garbanzos cocidos,otro alimento,orgánico
+bote de desodorante vacío,envase ligero,envases
+envase de champú vacío,envase ligero,envases
+tubo de pasta dental vacío,envase ligero,envases
+tarro de aceitunas de cristal,envase de vidrio,vidrio
+frasco de tomate de cristal,envase de vidrio,vidrio
+botella de agua de cristal,envase de vidrio,vidrio
+papel de impresora usado,papel o cartón,papel y cartón
+papel de regalo sin plástico,papel o cartón,papel y cartón
+caja de cartón plegada,papel o cartón,papel y cartón
+cepillo de dientes usado,objeto no envase,resto
+cuchara de plástico rota,objeto no envase,resto
+percha de plástico rota,objeto no envase,resto
+pera,fruta,orgánico
+uva,fruta,orgánico
+kiwi,fruta,orgánico
+piña,fruta,orgánico
+melón,fruta,orgánico
+cereza,fruta,orgánico
+arándano,fruta,orgánico
+calabaza,vegetal,orgánico
+apio,vegetal,orgánico
+puerro,vegetal,orgánico
+espárrago,vegetal,orgánico
+judías verdes,vegetal,orgánico
+brócoli,vegetal,orgánico
+restos de pollo cocinado,otro alimento,orgánico
+restos de pescado,otro alimento,orgánico
+huesos de pollo,otro alimento,orgánico
+arroz cocido sobrante,otro alimento,orgánico
+pasta cocida sobrante,otro alimento,orgánico
+restos de bacalao,otro alimento,orgánico
+piel de calabacín,otro alimento,orgánico
+restos de comida del almuerzo,otro alimento,orgánico
+bote de detergente vacío,envase ligero,envases
+lata de conserva vacía,envase ligero,envases
+brik de zumo vacío,envase ligero,envases
+bandeja de poliestireno limpia,envase ligero,envases
+envoltorio de plástico de alimentos,envase ligero,envases
+botella de jabón líquido de plástico,envase ligero,envases
+botella de plástico de aceite vacía,envase ligero,envases
+botella de vino de vidrio vacía,envase de vidrio,vidrio
+botella de aceite de oliva de vidrio,envase de vidrio,vidrio
+tarro de salsa de vidrio,envase de vidrio,vidrio
+frasco de colonia de vidrio vacío,envase de vidrio,vidrio
+frasco de alimentos de vidrio,envase de vidrio,vidrio
+tarro de conservas de cristal,envase de vidrio,vidrio
+botella de tónica de cristal,envase de vidrio,vidrio
+caja de cartón de zapatos limpia,papel o cartón,papel y cartón
+papel de impresora limpio,papel o cartón,papel y cartón
+sobre de papel usado,papel o cartón,papel y cartón
+folleto de papel usado,papel o cartón,papel y cartón
+página de revista de papel,papel o cartón,papel y cartón
+hojas de apuntes escritas,papel o cartón,papel y cartón
+cuchara de madera rota,objeto no envase,resto
+juguete de madera roto,objeto no envase,resto
+funda de móvil rota,objeto no envase,resto
+caja de plástico rota que no es envase,objeto no envase,resto
+objeto de metal pequeño roto,objeto no envase,resto
+vaso de plástico reutilizable roto,objeto no envase,resto
+cubo de plástico roto,objeto no envase,resto

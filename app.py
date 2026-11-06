@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import unicodedata
 
 import pandas as pd
@@ -32,6 +33,70 @@ CONSEJOS = {
 
 UMBRAL_CONFIDENCIA = 0.35
 MENSAJE_PUNTO_LIMPIO = "Ir al punto limpio"
+MENSAJE_MATERIAL_INDEFINIDO = "Necesito saber el material del envase"
+
+# Listas sencillas para reconocer frutas y vegetales que el modelo de texto
+# puede confundir aunque sean ejemplos comunes.
+FRUTAS = {
+    "manzana", "pera", "platano", "banana", "naranja", "mandarina",
+    "limon", "lima", "uva", "fresa", "frutilla", "cereza", "melocoton",
+    "durazno", "albaricoque", "damasco", "ciruela", "kiwi", "pina",
+    "anana", "mango", "papaya", "melon", "sandia", "aguacate", "palta",
+    "granada", "higo", "pomelo", "arandano", "frambuesa", "mora",
+    "fruta", "frutas",
+}
+
+VEGETALES = {
+    "lechuga", "espinaca", "acelga", "col", "repollo", "brocoli",
+    "coliflor", "zanahoria", "patata", "papa", "batata", "boniato",
+    "camote", "tomate", "pepino", "calabacin", "zucchini", "berenjena",
+    "pimiento", "calabaza", "cebolla", "ajo", "puerro", "apio",
+    "esparrago", "alcachofa", "judia verde", "judias verdes", "ejote",
+    "guisante", "maiz", "maices", "elote", "yuca", "rabano", "remolacha",
+    "nabo", "vegetal", "vegetales", "verdura", "verduras",
+}
+
+PALABRAS_ENVASE = {
+    "botella", "envase", "frasco", "tarro", "lata", "brik", "bote",
+    "bandeja", "bolsa", "envoltorio", "plastico", "vidrio", "cristal",
+    "metal", "paquete",
+}
+
+
+def normalizar_texto(texto):
+    return "".join(
+        caracter for caracter in unicodedata.normalize("NFD", str(texto).lower())
+        if unicodedata.category(caracter) != "Mn"
+    )
+
+
+def contiene_termino(texto, termino):
+    # Acepta el singular y plurales sencillos, con límites de palabra para
+    # evitar coincidencias accidentales dentro de otras palabras.
+    termino = normalizar_texto(termino)
+    if termino.endswith("z"):
+        plural = termino[:-1] + "ces"
+    elif termino.endswith(("a", "e", "i", "o", "u")):
+        plural = termino + "s"
+    else:
+        plural = termino + "es"
+    return any(
+        re.search(r"(?<!\w)" + re.escape(variante) + r"(?!\w)", texto)
+        for variante in {termino, plural}
+    )
+
+
+def detectar_tipo_fruta_vegetal(residuo):
+    texto = normalizar_texto(residuo)
+    # Si la descripción habla del envase o del material, se clasifica ese objeto
+    # y no el alimento que quizá contenía.
+    if any(contiene_termino(texto, palabra) for palabra in PALABRAS_ENVASE):
+        return None
+    if any(contiene_termino(texto, fruta) for fruta in FRUTAS):
+        return "fruta"
+    if any(contiene_termino(texto, vegetal) for vegetal in VEGETALES):
+        return "vegetal"
+    return None
 PALABRAS_CLAVE_CATEGORIA = {
     "papel y cartón": [
         "papel", "carton", "cuaderno", "libro", "hoja", "revista", "folleto",
@@ -158,6 +223,43 @@ def detectar_categoria_o_punto_limpio(residuo, modelo=None, datos=None):
     if any(termino in texto_normalizado for termino in terminos_especiales):
         return MENSAJE_PUNTO_LIMPIO
 
+    palabras_envase = (
+        "botella", "envase", "frasco", "tarro", "bote", "bandeja",
+        "bolsa", "paquete"
+    )
+    menciona_envase = any(
+        contiene_termino(texto_normalizado, palabra) for palabra in palabras_envase
+    )
+    menciona_vidrio = any(
+        contiene_termino(texto_normalizado, palabra) for palabra in ("vidrio", "cristal")
+    )
+    menciona_ligero = any(
+        contiene_termino(texto_normalizado, palabra)
+        for palabra in ("plastico", "metal", "aluminio", "brik")
+    )
+    if menciona_vidrio and menciona_ligero:
+        return MENSAJE_MATERIAL_INDEFINIDO
+    if menciona_envase and menciona_vidrio:
+        return "vidrio"
+    if menciona_envase and menciona_ligero:
+        return "envases"
+    if menciona_envase:
+        return MENSAJE_MATERIAL_INDEFINIDO
+
+    # Las latas y los briks ya identifican el tipo de envase ligero aunque no
+    # se indique el material en la frase.
+    if contiene_termino(texto_normalizado, "lata") or contiene_termino(texto_normalizado, "brik"):
+        return "envases"
+
+    # El nombre de una bebida no indica por sí solo si se tira una botella,
+    # una lata u otro tipo de envase.
+    bebidas = ("cerveza", "vino", "refresco", "agua", "zumo", "leche")
+    if any(contiene_termino(texto_normalizado, bebida) for bebida in bebidas):
+        return MENSAJE_MATERIAL_INDEFINIDO
+
+    if detectar_tipo_fruta_vegetal(texto):
+        return "orgánico"
+
     # Las palabras clave solo determinan si la entrada pertenece a alguna de
     # las cinco fracciones conocidas; la categoría final siempre la decide el
     # clasificador, evitando que la primera regla coincidente fuerce una etiqueta.
@@ -197,8 +299,14 @@ if st.button("Consultar", type="primary"):
     if not residuo.strip():
         st.warning("Escribe un residuo para obtener una predicción.")
     else:
+        tipo_detectado = detectar_tipo_fruta_vegetal(residuo)
         categoria = detectar_categoria_o_punto_limpio(residuo, modelo, datos)
-        if categoria == MENSAJE_PUNTO_LIMPIO:
+        if tipo_detectado:
+            st.info(f"Tipo identificado: {tipo_detectado}.")
+        if categoria == MENSAJE_MATERIAL_INDEFINIDO:
+            st.subheader("Falta un dato")
+            st.warning("Describe qué envase vas a tirar y, si hace falta, su material. Por ejemplo: botella de cerveza de vidrio o lata de cerveza.")
+        elif categoria == MENSAJE_PUNTO_LIMPIO:
             st.subheader("Resultado")
             st.warning(MENSAJE_PUNTO_LIMPIO)
             st.write("Este residuo no aparece en las categorías del modelo y probablemente requiera atención en un punto limpio o consulta local.")
