@@ -29,6 +29,34 @@ CONSEJOS = {
     "resto": "Esta categoría es para residuos domésticos no incluidos en las fracciones selectivas.",
 }
 
+UMBRAL_CONFIDENCIA = 0.35
+MENSAJE_PUNTO_LIMPIO = "Ir al punto limpio"
+PALABRAS_CLAVE_CATEGORIA = {
+    "papel y cartón": [
+        "papel", "carton", "cuaderno", "libro", "hoja", "revista", "folleto",
+        "sobre", "catalogo", "postal", "caja", "bolsa de papel", "envoltorio de papel",
+        "cartulina", "periódico", "diario", "agenda", "cuaderno", "libreta"
+    ],
+    "vidrio": [
+        "vidrio", "frasco", "botella", "tarro", "jarra", "vaso de vidrio",
+        "botellin", "botellita", "envase de vidrio", "cristal"
+    ],
+    "envases": [
+        "envase", "plastico", "lata", "aluminio", "brik", "bote", "film", "tapón",
+        "aerosol", "bolsa de plastico", "poliestireno", "metal", "tapa", "garrafa"
+    ],
+    "orgánico": [
+        "cascara", "piel", "restos", "posos", "verdura", "fruta", "manzana",
+        "naranja", "cafe", "pan", "arroz", "pasta", "cocinado", "queso", "yogur",
+        "hojas", "pera", "banana", "ensalada", "brocoli", "tomate", "cebolla", "zanahoria"
+    ],
+    "resto": [
+        "mascarilla", "colilla", "cepillo", "polvo", "bastoncillo", "toallita",
+        "esponja", "ceramica", "porcelana", "juguete", "goma", "ropa", "zapato",
+        "muñeco", "espejo", "bombilla", "jeringuilla", "dental", "uso", "sucia"
+    ],
+}
+
 
 @st.cache_resource
 # La caché evita volver a entrenar los modelos en cada clic o actualización de la página.
@@ -99,6 +127,36 @@ def cerrar_sesion():
     st.session_state["sesion_cerrada"] = True
 
 
+def detectar_categoria_o_punto_limpio(residuo, modelo=None):
+    if modelo is None:
+        datos, modelo, *_ = cargar_recursos()
+    else:
+        datos = None
+
+    texto = str(residuo or "").strip().lower()
+    if not texto:
+        return MENSAJE_PUNTO_LIMPIO
+
+    if datos is not None:
+        coincidencias = datos[datos["residuo"].str.strip().str.lower() == texto]
+        if not coincidencias.empty:
+            return coincidencias.iloc[0]["categoria"]
+
+    categoria_por_palabras = None
+    for categoria, palabras_clave in PALABRAS_CLAVE_CATEGORIA.items():
+        if any(palabra in texto for palabra in palabras_clave):
+            categoria_por_palabras = categoria
+            break
+
+    if categoria_por_palabras is not None:
+        prediccion = modelo.predict([texto])[0]
+        if prediccion == categoria_por_palabras:
+            return prediccion
+        return categoria_por_palabras
+
+    return MENSAJE_PUNTO_LIMPIO
+
+
 if st.session_state["sesion_cerrada"]:
     st.title("Sesión cerrada")
     st.info("Tus datos de esta sesión se han borrado. Para apagar la aplicación local, pulsa Ctrl+C en la terminal donde ejecutaste Streamlit.")
@@ -120,11 +178,15 @@ if st.button("Consultar", type="primary"):
     if not residuo.strip():
         st.warning("Escribe un residuo para obtener una predicción.")
     else:
-        # El modelo recibe una lista de textos y devuelve la categoría estimada.
-        categoria = modelo.predict([residuo.strip().lower()])[0]
-        st.subheader("Predicción")
-        st.success(NOMBRES_CONTENEDOR.get(categoria, categoria))
-        st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
+        categoria = detectar_categoria_o_punto_limpio(residuo, modelo)
+        if categoria == MENSAJE_PUNTO_LIMPIO:
+            st.subheader("Resultado")
+            st.warning(MENSAJE_PUNTO_LIMPIO)
+            st.write("Este residuo no aparece en las categorías del modelo y probablemente requiera atención en un punto limpio o consulta local.")
+        else:
+            st.subheader("Predicción")
+            st.success(NOMBRES_CONTENEDOR.get(categoria, categoria))
+            st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
 
 # Estas gráficas ayudan a explicar tanto los datos como los aciertos y errores del modelo.
 with st.expander("Ver análisis de datos y evaluación del modelo"):
