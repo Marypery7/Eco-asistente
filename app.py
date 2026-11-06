@@ -1,4 +1,5 @@
 from pathlib import Path
+import unicodedata
 
 import pandas as pd
 import streamlit as st
@@ -127,34 +128,52 @@ def cerrar_sesion():
     st.session_state["sesion_cerrada"] = True
 
 
-def detectar_categoria_o_punto_limpio(residuo, modelo=None):
-    if modelo is None:
-        datos, modelo, *_ = cargar_recursos()
-    else:
-        datos = None
+def detectar_categoria_o_punto_limpio(residuo, modelo=None, datos=None):
+    # Si no se pasan los recursos, los cargamos juntos. La app pasa ambos
+    # explícitamente para reutilizar los recursos ya cargados en su sesión.
+    if modelo is None or datos is None:
+        datos_cargados, modelo_cargado, *_ = cargar_recursos()
+        datos = datos if datos is not None else datos_cargados
+        modelo = modelo if modelo is not None else modelo_cargado
 
     texto = str(residuo or "").strip().lower()
     if not texto:
         return MENSAJE_PUNTO_LIMPIO
 
-    if datos is not None:
-        coincidencias = datos[datos["residuo"].str.strip().str.lower() == texto]
-        if not coincidencias.empty:
-            return coincidencias.iloc[0]["categoria"]
+    coincidencias = datos[datos["residuo"].str.strip().str.lower() == texto]
+    if not coincidencias.empty:
+        return coincidencias.iloc[0]["categoria"]
 
-    categoria_por_palabras = None
-    for categoria, palabras_clave in PALABRAS_CLAVE_CATEGORIA.items():
-        if any(palabra in texto for palabra in palabras_clave):
-            categoria_por_palabras = categoria
-            break
+    # Las reglas solo reconocen casos explícitos de residuos especiales que
+    # deben salir de las cinco categorías del clasificador.
+    texto_normalizado = "".join(
+        caracter for caracter in unicodedata.normalize("NFD", texto)
+        if unicodedata.category(caracter) != "Mn"
+    )
+    terminos_especiales = (
+        "pila", "bateria", "medicamento", "jeringuilla", "aparato electrico",
+        "electrodomestico", "ordenador", "portatil", "laptop", "movil",
+        "telefono", "bombilla", "fluorescente", "punto limpio"
+    )
+    if any(termino in texto_normalizado for termino in terminos_especiales):
+        return MENSAJE_PUNTO_LIMPIO
 
-    if categoria_por_palabras is not None:
-        prediccion = modelo.predict([texto])[0]
-        if prediccion == categoria_por_palabras:
-            return prediccion
-        return categoria_por_palabras
+    # Las palabras clave solo determinan si la entrada pertenece a alguna de
+    # las cinco fracciones conocidas; la categoría final siempre la decide el
+    # clasificador, evitando que la primera regla coincidente fuerce una etiqueta.
+    palabras_conocidas = {
+        palabra
+        for palabras in PALABRAS_CLAVE_CATEGORIA.values()
+        for palabra in palabras
+    }
+    if not any(
+        "".join(caracter for caracter in unicodedata.normalize("NFD", palabra)
+                if unicodedata.category(caracter) != "Mn") in texto_normalizado
+        for palabra in palabras_conocidas
+    ):
+        return MENSAJE_PUNTO_LIMPIO
 
-    return MENSAJE_PUNTO_LIMPIO
+    return modelo.predict([texto])[0]
 
 
 if st.session_state["sesion_cerrada"]:
@@ -178,7 +197,7 @@ if st.button("Consultar", type="primary"):
     if not residuo.strip():
         st.warning("Escribe un residuo para obtener una predicción.")
     else:
-        categoria = detectar_categoria_o_punto_limpio(residuo, modelo)
+        categoria = detectar_categoria_o_punto_limpio(residuo, modelo, datos)
         if categoria == MENSAJE_PUNTO_LIMPIO:
             st.subheader("Resultado")
             st.warning(MENSAJE_PUNTO_LIMPIO)
