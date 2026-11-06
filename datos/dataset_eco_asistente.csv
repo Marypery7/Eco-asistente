@@ -1,101 +1,161 @@
-﻿residuo,categoria
-cuaderno de papel,papel y cartón
-cuaderno usado,papel y cartón
-periódico de papel,papel y cartón
-revista de papel,papel y cartón
-caja de cartón limpia,papel y cartón
-caja pequeña de cartón,papel y cartón
-sobre de papel,papel y cartón
-hoja de papel,papel y cartón
-folleto de papel,papel y cartón
-libro de papel,papel y cartón
-carpeta de cartón,papel y cartón
-huevera de cartón,papel y cartón
-tubo de cartón,papel y cartón
-rollo de papel vacío,papel y cartón
-bolsa de papel limpia,papel y cartón
-cartón de embalaje limpio,papel y cartón
-papel de oficina,papel y cartón
-cartulina limpia,papel y cartón
-caja de cereales de cartón,papel y cartón
-papel de regalo limpio,papel y cartón
-botella de vidrio,vidrio
-frasco de vidrio,vidrio
-tarro de vidrio,vidrio
-botella de vino de vidrio,vidrio
-botella de agua de vidrio,vidrio
-frasco de mermelada de vidrio,vidrio
-tarro de conserva de vidrio,vidrio
-botella de aceite de vidrio,vidrio
-botella de cerveza de vidrio,vidrio
-frasco de perfume de vidrio,vidrio
-envase de vidrio,vidrio
-botella de refresco de vidrio,vidrio
-tarro de aceitunas de vidrio,vidrio
-botella de zumo de vidrio,vidrio
-frasco de comida de vidrio,vidrio
-botella de vidrio vacía,vidrio
-tarro de vidrio vacío,vidrio
-frasco de vidrio vacío,vidrio
-botella de cava de vidrio,vidrio
-envase de colonia de vidrio,vidrio
-botella de plástico,envases
-botella plástica,envases
-lata de aluminio,envases
-lata de refresco,envases
-lata de conserva metálica,envases
-brik de leche,envases
-brik de zumo,envases
-envase de yogur de plástico,envases
-vaso de yogur de plástico,envases
-bandeja de plástico,envases
-bolsa de plástico,envases
-film de plástico,envases
-tapón de plástico,envases
-botella de detergente de plástico,envases
-bote de champú de plástico,envases
-envoltorio de plástico,envases
-papel de aluminio limpio,envases
-bandeja de poliestireno,envases
-malla de frutas de plástico,envases
-aerosol vacío,envases
-cáscara de plátano,orgánico
-piel de naranja,orgánico
-restos de manzana,orgánico
-restos de fruta,orgánico
-restos de verdura,orgánico
-cáscara de huevo,orgánico
-posos de café,orgánico
-bolsa de té usada,orgánico
-restos de comida,orgánico
-espinas de pescado,orgánico
-huesos de comida,orgánico
-cáscara de patata,orgánico
-hojas de lechuga,orgánico
-restos de arroz,orgánico
-restos de pasta,orgánico
-pan duro,orgánico
-servilleta sucia de comida,orgánico
-papel de cocina sucio,orgánico
-restos de carne cocinada,orgánico
-restos de pescado cocinado,orgánico
-pañal usado,resto
-toallita húmeda usada,resto
-cepillo de dientes de plástico,resto
-esponja de cocina usada,resto
-vaso roto de cerámica,resto
-plato roto de cerámica,resto
-taza rota de porcelana,resto
-bastoncillo de algodón usado,resto
-polvo de barrer,resto
-colilla de cigarrillo,resto
-mascarilla usada,resto
-compresa usada,resto
-arena de gato usada,resto
-cuchilla de afeitar usada,resto
-juguete roto de plástico,resto
-bolígrafo usado,resto
-goma de borrar usada,resto
-envoltorio de caramelo,resto
-guantes de goma usados,resto
-bolsa de aspiradora llena,resto
+﻿id,residuo,categoria,destino_app,consejo_reciclaje
+1,bombilla led,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un punto limpio o a un contenedor específico de residuos eléctricos; no va al vidrio.
+2,bombilla de bajo consumo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Contiene componentes que requieren gestión específica. Deposítala en un punto de recogida habilitado.
+3,fluorescente,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo entero a un punto limpio o a un establecimiento con recogida específica.
+4,bombilla halógena,gris,Contenedor gris,"En general, al contenedor de resto si no existe recogida específica; consulta las normas municipales."
+5,espejo roto,gris,Contenedor gris,Envuélvelo para evitar cortes y deposítalo en resto; no va al contenedor verde.
+6,vaso de cristal roto,gris,Contenedor gris,Envuélvelo para evitar cortes y deposítalo en resto; no es un envase de vidrio.
+7,copa de cristal,gris,Contenedor gris,La cristalería no va al iglú verde; deposítala en resto o consulta el punto limpio si es mucha cantidad.
+8,fuente de horno de vidrio,gris,Contenedor gris,El vidrio resistente al calor no es un envase; deposítalo en resto si el municipio no indica otra opción.
+9,tapón de corcho natural,gris,Contenedor gris,"Consulta si hay recogida específica de corcho; si no, deposítalo en resto o compostaje doméstico si está admitido."
+10,corcho blanco de embalaje,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al punto limpio si es voluminoso; pequeñas cantidades limpias pueden tener normas locales distintas.
+11,bandeja de porexpan limpia,amarillo,Contenedor amarillo,"Si es un envase doméstico, deposítala en el contenedor amarillo."
+12,envase de yogur,amarillo,Contenedor amarillo,Vacía los restos y deposítalo en el contenedor amarillo; no hace falta lavarlo a fondo.
+13,tarrina de helado de plástico,amarillo,Contenedor amarillo,"Si es un envase, vacíala y deposítala en el amarillo."
+14,blíster de medicamentos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Lleva el blíster vacío o con restos junto con el envase del medicamento al punto SIGRE de la farmacia.
+15,caja de medicamento de cartón,azul,Contenedor azul,Deposita la caja de cartón vacía en el azul; el prospecto también puede ir al azul.
+16,medicamento caducado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al Punto SIGRE de una farmacia. No lo tires al váter ni a la basura.
+17,termómetro de mercurio,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo rompas ni lo manipules innecesariamente. Consulta al punto limpio o al servicio municipal para su entrega segura.
+18,termómetro digital,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es un residuo eléctrico/electrónico; entrégalo en un punto limpio o tienda con recogida.
+19,jeringuilla doméstica usada,gris,Contenedor gris,No la deposites suelta en reciclaje. Usa un recipiente rígido y consulta el sistema sanitario o municipal local para su entrega segura.
+20,mascarilla desechable,gris,Contenedor gris,"Deposítala en el contenedor de resto, nunca en el amarillo."
+21,guantes de látex usados,gris,Contenedor gris,"Deposítalos en resto, salvo que procedan de un entorno sanitario con protocolo específico."
+22,pañal usado,gris,Contenedor gris,"Deposítalo en el contenedor de resto, bien cerrado."
+23,toallita húmeda,gris,Contenedor gris,Va al contenedor de resto. Nunca la tires al inodoro.
+24,compresa usada,gris,Contenedor gris,"Deposítala en resto, envuelta. No va al váter."
+25,bastoncillo de algodón,gris,Contenedor gris,Deposítalo en resto; no lo tires al inodoro.
+26,hilo dental,gris,Contenedor gris,Deposítalo en resto; no es reciclable en los contenedores habituales.
+27,cápsula de café de aluminio,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un punto de recogida de cápsulas o al sistema indicado por el fabricante; no se debe asumir que va al amarillo.
+28,cápsula de café compostable,gris,Contenedor gris,"Comprueba que esté certificada y si tu municipio admite este residuo en orgánica; si no, resto."
+29,aceite de cocina usado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Guárdalo frío en una botella cerrada y llévalo al contenedor específico de aceite usado o punto limpio.
+30,aceite de motor usado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es un residuo peligroso. Entrégalo en un punto limpio o gestor autorizado; nunca al desagüe.
+31,pintura sobrante,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala cerrada al punto limpio. No viertas pintura líquida por el fregadero.
+32,disolvente,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Residuo peligroso: conserva el envase cerrado y entrégalo en un punto limpio.
+33,esmalte de uñas,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si contiene producto, llévalo al punto limpio como residuo químico doméstico; consulta las normas locales."
+34,aerosol de pintura lleno,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al punto limpio; no lo perfores ni lo quemes.
+35,spray desodorante vacío,amarillo,Contenedor amarillo,"Si está completamente vacío y es un envase metálico, deposítalo en el amarillo."
+36,spray insecticida con producto,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si contiene producto, entrégalo en un punto limpio; no lo vacíes deliberadamente."
+37,pila alcalina,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en un contenedor específico de pilas, en comercios o punto limpio."
+38,pila botón,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un contenedor específico de pilas; mantenla fuera del alcance de niños y mascotas.
+39,batería de móvil,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en recogida de pilas/baterías o en un punto limpio; evita perforarla.
+40,batería de coche,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégala en un taller, punto limpio o gestor autorizado; es un residuo peligroso."
+41,cargador de móvil,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o a una tienda con recogida de aparatos eléctricos.
+42,cable USB,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítalo en un punto limpio o contenedor/establecimiento de recogida de residuos eléctricos.
+43,auriculares rotos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Son residuos eléctricos; llévalos a un punto limpio o tienda con recogida.
+44,móvil viejo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégalo en un punto limpio o comercio con recogida de RAEE; borra tus datos antes.
+45,ordenador portátil viejo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o comercio autorizado para residuos electrónicos.
+46,teclado de ordenador,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o establecimiento que recoja aparatos eléctricos.
+47,ratón de ordenador,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítalo en recogida de residuos eléctricos/electrónicos.
+48,televisor,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Solicita recogida de voluminosos o llévalo a un punto limpio; no lo abandones en la calle.
+49,pequeño electrodoméstico,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Tostadora, batidora o secador: entrégalo en punto limpio o tienda con recogida."
+50,cartucho de tinta,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Devuélvelo a un punto de recogida del fabricante, tienda o punto limpio."
+51,toner de impresora,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto de recogida de tóner o punto limpio; evita vaciar el polvo.
+52,ropa usada en buen estado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en un contenedor textil o entrégala a una entidad de reutilización.
+53,zapatos viejos,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si están limpios y secos, llévalos al contenedor textil o punto de reutilización."
+54,ropa mojada o muy sucia,gris,Contenedor gris,"Si no es reutilizable y está muy contaminada, deposítala en resto; consulta opciones municipales."
+55,sábana vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégala en el contenedor textil si está limpia y seca.
+56,bolso viejo,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si es reutilizable, llévalo a recogida textil; si no, consulta el punto limpio o resto según material."
+57,juguete de plástico sin pilas,gris,Contenedor gris,"No es un envase, por lo que no va al amarillo. Si es voluminoso, llévalo al punto limpio."
+58,juguete electrónico,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Retira las pilas si es posible y deposítalas en su contenedor; entrega el juguete como RAEE.
+59,peluche viejo,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si está limpio y seco, consulta el contenedor textil; si no se admite, resto."
+60,colchón,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Solicita recogida municipal de voluminosos o llévalo al punto limpio.
+61,mueble de madera,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Solicita recogida de voluminosos o llévalo al punto limpio; no lo abandones junto al contenedor.
+62,sartén vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No es un envase. Llévala al punto limpio si el municipio no ofrece recogida de metales.
+63,olla vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en punto limpio o sistema municipal de metales/voluminosos.
+64,percha de plástico,gris,Contenedor gris,No es un envase; consulta si el punto limpio recoge objetos de plástico duro.
+65,cepillo de dientes,gris,Contenedor gris,Deposítalo en resto o en un programa específico de recogida si existe.
+66,maquinilla desechable,gris,Contenedor gris,"Deposítala en resto, protegida para evitar cortes."
+67,cuchilla de afeitar,gris,Contenedor gris,Guárdala en un recipiente rígido antes de tirarla a resto; nunca suelta.
+68,cerámica rota,gris,Contenedor gris,Envuélvela para evitar cortes y deposítala en resto; grandes cantidades al punto limpio.
+69,plato de porcelana,gris,Contenedor gris,No va al contenedor verde ni al azul; deposítalo en resto.
+70,maceta de barro,gris,Contenedor gris,Deposítala en resto si es pequeña; para grandes cantidades consulta el punto limpio.
+71,tierra de macetas,gris,Contenedor gris,"Pequeñas cantidades, en resto; no la viertas en alcantarillas ni parques. Consulta normas locales."
+72,arena de gato usada,gris,Contenedor gris,"Deposítala en resto, bien cerrada; no la tires al inodoro."
+73,excrementos de mascota,gris,Contenedor gris,"Recógelos en una bolsa y deposítalos en resto, según la normativa municipal."
+74,restos de comida cocinada,marron,Contenedor marrón,Deposítalos en el contenedor marrón si está implantado en tu municipio.
+75,cáscara de huevo,marron,Contenedor marrón,Deposítala en el contenedor marrón si está disponible.
+76,posos de café,marron,Contenedor marrón,Deposítalos en el contenedor marrón; los filtros de papel sin plástico también suelen admitirse.
+77,bolsa de té sin grapa,marron,Contenedor marrón,Deposítala en el contenedor marrón si no contiene elementos no compostables.
+78,servilleta de papel sucia de comida,marron,Contenedor marrón,"Puede ir al marrón si está manchada de restos orgánicos y tu municipio lo admite; si no, resto."
+79,pañuelo de papel usado,gris,Contenedor gris,"Por higiene, deposítalo en resto, salvo indicación municipal distinta."
+80,huesos grandes,marron,Contenedor marrón,"En general van al marrón, aunque algunos municipios establecen excepciones."
+81,concha de mejillón,marron,Contenedor marrón,"Consulta las normas locales: la admisión de conchas puede variar; si no se admite en marrón, resto."
+82,tapón de plástico de botella,amarillo,Contenedor amarillo,Deposítalo junto con la botella en el amarillo.
+83,tapón de corcho sintético,amarillo,Contenedor amarillo,"Si forma parte de un envase, deposítalo en el amarillo."
+84,papel de aluminio limpio,amarillo,Contenedor amarillo,Haz una bola compacta y deposítala en el amarillo.
+85,papel de aluminio con mucha comida,gris,Contenedor gris,"Si está muy sucio y no se puede vaciar, deposítalo en resto."
+86,papel plastificado,gris,Contenedor gris,"Si no se puede separar la capa plástica, deposítalo en resto."
+87,papel de regalo metalizado,gris,Contenedor gris,"Si tiene acabado metalizado o plastificado, normalmente va a resto; el papel simple puede ir al azul."
+88,caja de pizza limpia,azul,Contenedor azul,La parte limpia de cartón puede ir al azul.
+89,caja de pizza con grasa,gris,Contenedor gris,La parte muy manchada de grasa va a resto; separa y recicla la parte limpia en azul.
+90,papel de cocina limpio,azul,Contenedor azul,"Si está limpio y seco, puede ir al azul."
+91,papel de cocina con aceite o comida,marron,Contenedor marrón,"Si está manchado de restos orgánicos, puede ir al marrón cuando el municipio lo admita."
+92,sobre acolchado con burbujas,gris,Contenedor gris,"Separa papel y plástico si es sencillo; cada parte se deposita según material. Si no, resto."
+93,envase de cartón de leche,amarillo,Contenedor amarillo,"Es un brik compuesto y va al contenedor amarillo, no al azul."
+94,brik de zumo,amarillo,Contenedor amarillo,Vacía el envase y deposítalo en el amarillo.
+95,bandeja de aluminio de comida,amarillo,Contenedor amarillo,"Si es un envase, vacíala y deposítala en el amarillo."
+96,papel de horno usado,gris,Contenedor gris,El papel de horno suele llevar tratamiento antiadherente; deposítalo en resto.
+97,pañal de adulto,gris,Contenedor gris,"Deposítalo en resto, bien cerrado."
+98,ceniza fría,gris,Contenedor gris,Solo cuando esté completamente fría; deposítala en resto. Nunca tires cenizas calientes.
+99,colilla de cigarrillo,gris,Contenedor gris,Asegúrate de que esté apagada y deposítala en resto; nunca en la calle.
+100,chicle,gris,Contenedor gris,"Deposítalo en resto, no en el suelo ni en el orgánico."
+101,cinta adhesiva,gris,Contenedor gris,Deposítala en resto; no es papel reciclable.
+102,globo,gris,Contenedor gris,Deposítalo en resto; no va al contenedor amarillo.
+103,red de frutas,amarillo,Contenedor amarillo,"Si es un envase de plástico, deposítala en el amarillo."
+104,malla de patatas,amarillo,Contenedor amarillo,"Si es el envoltorio de venta del alimento, va al amarillo."
+105,envase de medicamento vacío de plástico,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al Punto SIGRE de la farmacia junto con los envases de medicamentos.
+106,frasco de perfume vacío,verde,Contenedor verde,"Si es un frasco de vidrio de envase, deposítalo en el verde; retira el tapón y deposítalo según material."
+107,tapón metálico de botella,amarillo,Contenedor amarillo,Deposítalo en el contenedor amarillo.
+108,tarro de conservas,verde,Contenedor verde,Vacía el tarro y deposítalo en el contenedor verde; la tapa metálica va al amarillo.
+109,cristal de ventana,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No es un envase de vidrio. Llévalo al punto limpio o consulta la recogida municipal.
+110,parabrisas roto,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es un residuo especial; consulta un punto limpio o un gestor autorizado.
+111,extintor,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo vacíes ni lo manipules. Consulta al proveedor o a un punto limpio para su gestión.
+112,bombona de butano,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Devuélvela al distribuidor o consulta el sistema autorizado de recogida; no la abandones.
+113,cartón grande de embalaje,azul,Contenedor azul,"Pliega el cartón y deposítalo en el contenedor azul; si no cabe, usa el punto limpio."
+114,caja de madera de fruta,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la recogida municipal o el punto limpio; no va al azul ni al amarillo.
+115,cuchillo de cocina viejo,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al punto limpio o sistema municipal de metales, protegido para evitar cortes."
+116,aguja de coser,gris,Contenedor gris,Guárdala en un recipiente rígido antes de depositarla en resto.
+117,radiografía,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un punto limpio o a un centro con recogida específica; no va al contenedor azul.
+118,negativos fotográficos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta un punto limpio para su gestión; no van al contenedor amarillo ni azul.
+119,piscina hinchable rota,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por su tamaño y mezcla de materiales, consulta el punto limpio o recogida de voluminosos."
+120,manguera de jardín,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No es un envase; consulta el punto limpio o la recogida municipal.
+121,persiana rota,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la recogida de voluminosos o el punto limpio.
+122,neumático usado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégalo en un taller o punto de recogida autorizado; no lo abandones.
+123,ropa con aceite de motor,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Al estar contaminada, consulta un punto limpio o gestor autorizado; no la mezcles con textil reutilizable."
+124,envase de lejía vacío,amarillo,Contenedor amarillo,Vacía el envase y deposítalo en el amarillo; no es necesario enjuagarlo a fondo.
+125,envase de pesticida con restos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo reutilices ni lo enjuagues en el desagüe. Consulta un gestor autorizado o punto de recogida específico.
+126,producto de limpieza caducado,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si queda producto, consulta el punto limpio para residuos químicos domésticos; no lo viertas al desagüe."
+127,laca de uñas vacía,gris,Contenedor gris,"Si está completamente vacía y el municipio no dispone de recogida específica, consulta sus indicaciones; no la mezcles con envases si conserva producto."
+128,caja de cerillas,azul,Contenedor azul,"Si está vacía y es de cartón, deposítala en el azul."
+129,cerillas usadas,gris,Contenedor gris,Asegúrate de que estén completamente apagadas y deposítalas en resto.
+130,bolsa de plástico de supermercado,amarillo,Contenedor amarillo,Deposítala en el contenedor amarillo.
+131,bolsa compostable certificada,marron,Contenedor marrón,Solo va al marrón si está certificada y tu municipio acepta bolsas compostables.
+132,caja de huevos de cartón,azul,Contenedor azul,Deposítala en el contenedor azul si está limpia.
+133,caja de huevos de plástico,amarillo,Contenedor amarillo,"Si es un envase de plástico, deposítala en el amarillo."
+134,bandeja de carne de poliestireno,amarillo,Contenedor amarillo,"Si es un envase, deposítala en el amarillo una vez vacía."
+135,envase de comida con restos,amarillo,Contenedor amarillo,Retira los restos grandes y deposítalo en el amarillo si es un envase; no hace falta lavarlo a fondo.
+136,papel de charcutería plastificado,gris,Contenedor gris,"Si lleva una capa plástica inseparable, deposítalo en resto."
+137,lata de conserva con restos,amarillo,Contenedor amarillo,Vacía los restos y deposítala en el amarillo.
+138,papel de periódico mojado,azul,Contenedor azul,"Si no está contaminado con grasa o sustancias, puede ir al azul; escúrrelo y sigue la norma local."
+139,libro viejo,azul,Contenedor azul,"Si no se puede reutilizar, deposítalo en el azul; retira tapas u otros materiales si son fácilmente separables."
+140,fotografía en papel,gris,Contenedor gris,Las fotografías tienen recubrimientos y no suelen ir al azul; deposítalas en resto.
+141,CD o DVD,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o a una recogida específica de soportes digitales.
+142,disquete,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o recogida de residuos electrónicos.
+143,cinta VHS,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por sus materiales mezclados, consulta el punto limpio."
+144,cargador portátil powerbank,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es una batería y aparato electrónico; llévalo a recogida de pilas/baterías o RAEE. No lo perfores.
+145,vapeador desechable,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Contiene batería y componentes electrónicos; llévalo a recogida de RAEE o baterías, nunca al resto."
+146,cigarrillo electrónico,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrega el aparato en un punto de recogida de RAEE; separa la batería solo si es extraíble y seguro.
+147,panel solar pequeño,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta un punto limpio o gestor autorizado para residuos eléctricos/electrónicos.
+148,detector de humo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo desmontes. Consulta al fabricante o punto limpio por si requiere gestión específica.
+149,cartucho de gas de camping,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo perfores ni lo arrojes al fuego. Consulta el punto limpio o el sistema municipal para envases a presión.
+150,aceite de freír,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Déjalo enfriar, guárdalo en una botella cerrada y llévalo al contenedor de aceite usado."
+151,restos de poda pequeños,marron,Contenedor marrón,Deposítalos en el marrón solo si el municipio los admite; grandes cantidades requieren recogida vegetal o punto limpio.
+152,ramas grandes,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta el servicio municipal de restos de poda o el punto limpio.
+153,corona de flores artificial,gris,Contenedor gris,"Al mezclar materiales, suele ir a resto; separa componentes si es sencillo."
+154,árbol de navidad natural,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la campaña municipal de recogida de árboles o el servicio de restos vegetales.
+155,árbol de navidad artificial,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si está en buen estado, reutilízalo; si no, consulta recogida de voluminosos o punto limpio."
+156,cochecito de bebé,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si no se puede reutilizar, consulta recogida de voluminosos o punto limpio."
+157,silla infantil de coche,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si no se puede reutilizar de forma segura, consulta el punto limpio o recogida municipal de voluminosos."
+158,maleta rota,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por sus materiales y tamaño, consulta el punto limpio o recogida de voluminosos."
+159,alfombra vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la recogida municipal de voluminosos o el punto limpio.
+160,persiana de plástico,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por su tamaño y por no ser un envase, llévala al punto limpio o solicita recogida de voluminosos."
