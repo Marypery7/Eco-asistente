@@ -2,6 +2,7 @@ from pathlib import Path
 import re
 import unicodedata
 
+import altair as alt
 import pandas as pd
 import streamlit as st
 from sklearn.feature_extraction.text import CountVectorizer
@@ -21,6 +22,14 @@ NOMBRES_CONTENEDOR = {
     "envases": "contenedor amarillo (envases ligeros)",
     "orgánico": "contenedor marrón (biorresiduos)",
     "resto": "contenedor de resto",
+}
+
+COLORES_CONTENEDOR = {
+    "papel y cartón": "#4A90D9",
+    "vidrio": "#32845F",
+    "envases": "#E3B83E",
+    "orgánico": "#8A6A4F",
+    "resto": "#7D8884",
 }
 
 CONSEJOS = {
@@ -182,8 +191,66 @@ def cargar_recursos():
     return datos, modelo_final, exactitud, matriz, sorted(etiquetas.unique()), resultados
 
 
-st.set_page_config(page_title="Eco-asistente", page_icon="♻️")
+st.set_page_config(page_title="Eco-asistente", page_icon="♻️", layout="centered")
 st.session_state.setdefault("sesion_cerrada", False)
+
+st.markdown(
+    """
+    <style>
+    :root {
+        --eco-forest: #245b46;
+        --eco-leaf: #397b5b;
+        --eco-sage: #e7f0e8;
+        --eco-cream: #f7f8f3;
+        --eco-ink: #1c2d25;
+        --eco-muted: #607168;
+    }
+    [data-testid="stAppViewContainer"] {
+        background: radial-gradient(ellipse at 12% 0%, #e8f1e8 0%, #f7f8f3 44%, #f7f8f3 100%);
+        color: var(--eco-ink);
+    }
+    [data-testid="stHeader"] { background: transparent; }
+    .block-container { max-width: 860px; padding-top: 2rem; padding-bottom: 2.5rem; }
+    .eco-hero {
+        padding: 1.7rem 1.9rem; margin-bottom: 1.2rem;
+        border: 1px solid #d8e5d8; border-radius: 24px;
+        background: linear-gradient(120deg, rgba(255,255,255,.96), rgba(235,244,235,.94));
+        box-shadow: 0 12px 35px rgba(38, 75, 52, .08);
+    }
+    .eco-kicker { color: var(--eco-leaf); font-size: .75rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .4rem; }
+    .eco-hero h1 { color: var(--eco-forest); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; margin: 0 0 .55rem 0; font-weight: 800; }
+    .eco-hero p { color: var(--eco-muted); font-size: 1rem; margin: 0; }
+    [data-testid="stVerticalBlockBorderWrapper"] { border-color: #dce6dd !important; border-radius: 18px !important; background: rgba(255,255,255,.86); box-shadow: 0 7px 22px rgba(38, 75, 52, .045); }
+    [data-testid="stTextInputRootElement"] input {
+        min-height: 3rem; border-radius: 12px; border-color: #c9d8cb;
+        background: #fff !important; color: var(--eco-ink) !important;
+        -webkit-text-fill-color: var(--eco-ink) !important; font-size: 1rem;
+    }
+    [data-testid="stTextInputRootElement"] input::placeholder {
+        color: #78877d !important; -webkit-text-fill-color: #78877d !important; opacity: 1;
+    }
+    [data-testid="stTextInputRootElement"] input:focus { border-color: var(--eco-leaf); box-shadow: 0 0 0 .15rem rgba(57,123,91,.14); }
+    [data-testid="stBaseButton-primary"] {
+        min-height: 3rem; border: 0 !important; border-radius: 12px !important;
+        background: var(--eco-forest) !important; color: #fff !important; font-weight: 700;
+    }
+    [data-testid="stBaseButton-primary"] p { color: #fff !important; }
+    [data-testid="stBaseButton-primary"]:hover { background: var(--eco-leaf) !important; }
+    [data-testid="stBaseButton-secondary"] {
+        min-height: 2.5rem; border-radius: 12px !important;
+        border: 1px solid #c9d8cb !important; background: #edf3ed !important;
+        color: var(--eco-forest) !important; font-weight: 700;
+    }
+    [data-testid="stBaseButton-secondary"] p { color: var(--eco-forest) !important; }
+    [data-testid="stBaseButton-secondary"]:hover { background: #dfeae0 !important; border-color: #9eb9a3 !important; }
+    [data-testid="stAlert"] { border-radius: 14px; }
+    [data-testid="stExpander"] { border: 1px solid #dce6dd; border-radius: 16px; background: rgba(255,255,255,.75); }
+    h2, h3 { color: var(--eco-forest); }
+    .eco-footer { color: #718077; font-size: .78rem; text-align: center; padding-top: .5rem; }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 
 def cerrar_sesion():
@@ -283,9 +350,16 @@ if st.session_state["sesion_cerrada"]:
     st.info("Tus datos de esta sesión se han borrado. Para apagar la aplicación local, pulsa Ctrl+C en la terminal donde ejecutaste Streamlit.")
     st.stop()
 
-st.title("♻️ Eco-asistente")
-st.write("Escribe el nombre de un residuo y te indicaré su categoría de reciclaje estimada.")
-st.caption("Ejemplos: botella de plástico · frasco de vidrio · cuaderno de papel")
+st.markdown(
+    """
+    <div class="eco-hero">
+      <div class="eco-kicker">♻ Eco-asistente</div>
+      <h1>Reciclar empieza<br>por identificarlo.</h1>
+      <p>Escribe un residuo y recibe una orientación clara sobre dónde depositarlo.</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 try:
     datos, modelo, exactitud, matriz, categorias, resultados = cargar_recursos()
@@ -293,30 +367,40 @@ except FileNotFoundError as error:
     st.error(str(error))
     st.stop()
 
-residuo = st.text_input("¿Qué residuo quieres clasificar?", placeholder="Ej.: lata de aluminio")
+with st.container(border=True):
+    st.subheader("¿Qué quieres tirar?")
+    st.caption("Prueba con un nombre y material: botella de plástico, frasco de vidrio o lechuga.")
+    residuo = st.text_input(
+        "Nombre del residuo",
+        placeholder="Ej.: botella de tomate de vidrio",
+        label_visibility="collapsed",
+    )
+    _, boton_col = st.columns([2.2, 1])
+    with boton_col:
+        consultar = st.button("♻ Clasificar", type="primary", use_container_width=True)
 
-if st.button("Consultar", type="primary"):
+if consultar:
     if not residuo.strip():
-        st.warning("Escribe un residuo para obtener una predicción.")
+        st.warning("Escribe un residuo para obtener una orientación.")
     else:
-        tipo_detectado = detectar_tipo_fruta_vegetal(residuo)
-        categoria = detectar_categoria_o_punto_limpio(residuo, modelo, datos)
-        if tipo_detectado:
-            st.info(f"Tipo identificado: {tipo_detectado}.")
-        if categoria == MENSAJE_MATERIAL_INDEFINIDO:
-            st.subheader("Falta un dato")
-            st.warning("Describe qué envase vas a tirar y, si hace falta, su material. Por ejemplo: botella de cerveza de vidrio o lata de cerveza.")
-        elif categoria == MENSAJE_PUNTO_LIMPIO:
-            st.subheader("Resultado")
-            st.warning(MENSAJE_PUNTO_LIMPIO)
-            st.write("Este residuo no aparece en las categorías del modelo y probablemente requiera atención en un punto limpio o consulta local.")
-        else:
-            st.subheader("Predicción")
-            st.success(NOMBRES_CONTENEDOR.get(categoria, categoria))
-            st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
+        with st.container(border=True):
+            tipo_detectado = detectar_tipo_fruta_vegetal(residuo)
+            categoria = detectar_categoria_o_punto_limpio(residuo, modelo, datos)
+            st.markdown("#### Resultado")
+            if tipo_detectado:
+                st.info(f"Tipo identificado: **{tipo_detectado.capitalize()}**")
+            if categoria == MENSAJE_MATERIAL_INDEFINIDO:
+                st.warning("Describe qué envase vas a tirar y, si hace falta, su material. Por ejemplo: botella de cerveza de vidrio o lata de cerveza.")
+            elif categoria == MENSAJE_PUNTO_LIMPIO:
+                st.warning(MENSAJE_PUNTO_LIMPIO)
+                st.write("Este residuo no aparece en las categorías del modelo. Prueba con una descripción más concreta.")
+            else:
+                st.success(f"Deposítalo en: {NOMBRES_CONTENEDOR.get(categoria, categoria)}")
+                st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
 
 # Estas gráficas ayudan a explicar tanto los datos como los aciertos y errores del modelo.
 with st.expander("Ver análisis de datos y evaluación del modelo"):
+    st.caption("Estos gráficos muestran una evaluación fija sobre ejemplos reservados. No cambian al consultar un residuo nuevo.")
     st.subheader("Ejemplos disponibles por categoría")
     conteo_categorias = (
         datos["categoria"]
@@ -325,12 +409,22 @@ with st.expander("Ver análisis de datos y evaluación del modelo"):
         .rename_axis("Categoría")
         .reset_index(name="Número de ejemplos")
     )
-    st.bar_chart(
-        conteo_categorias,
-        x="Categoría",
-        y="Número de ejemplos",
-        alt="Cantidad de ejemplos del dataset en cada categoría de residuo",
+    grafico_conteo = alt.Chart(conteo_categorias).mark_bar(
+        cornerRadiusTopLeft=6, cornerRadiusTopRight=6
+    ).encode(
+        x=alt.X("Categoría:N", sort=categorias, axis=alt.Axis(title=None, labelAngle=-18)),
+        y=alt.Y("Número de ejemplos:Q", axis=alt.Axis(title="Ejemplos", gridColor="#E7ECE7")),
+        color=alt.Color(
+            "Categoría:N",
+            scale=alt.Scale(domain=categorias, range=[COLORES_CONTENEDOR[c] for c in categorias]),
+            legend=None,
+        ),
+        tooltip=["Categoría:N", "Número de ejemplos:Q"],
+    ).properties(height=250)
+    grafico_conteo = grafico_conteo.configure(background="#FFFFFF").configure_view(fill="#FFFFFF", strokeOpacity=0).configure_axis(
+        labelColor="#52645A", titleColor="#52645A", tickColor="#DCE5DC"
     )
+    st.altair_chart(grafico_conteo, use_container_width=True)
 
     st.subheader("Aciertos y errores en los residuos de prueba")
     st.write(f"Exactitud en el conjunto de prueba: **{exactitud:.0%}**")
@@ -342,14 +436,28 @@ with st.expander("Ver análisis de datos y evaluación del modelo"):
         .reset_index()
         .melt(id_vars="Categoría", var_name="Resultado", value_name="Número de residuos")
     )
-    st.bar_chart(
-        resumen,
-        x="Categoría",
-        y="Número de residuos",
-        color="Resultado",
-        stack=False,
-        alt="Comparación de aciertos y errores del clasificador en cada categoría",
+    grafico_resultados = alt.Chart(resumen).mark_bar(
+        cornerRadiusTopLeft=4, cornerRadiusTopRight=4
+    ).encode(
+        x=alt.X("Categoría:N", sort=categorias, axis=alt.Axis(title=None, labelAngle=-18)),
+        xOffset=alt.XOffset("Resultado:N", sort=["Acierto", "Error"]),
+        y=alt.Y("Número de residuos:Q", axis=alt.Axis(title="Residuos", gridColor="#E7ECE7")),
+        color=alt.Color(
+            "Categoría:N",
+            scale=alt.Scale(domain=categorias, range=[COLORES_CONTENEDOR[c] for c in categorias]),
+            legend=None,
+        ),
+        opacity=alt.Opacity(
+            "Resultado:N",
+            scale=alt.Scale(domain=["Acierto", "Error"], range=[1, 0.38]),
+            legend=alt.Legend(title="Resultado", orient="top"),
+        ),
+        tooltip=["Categoría:N", "Resultado:N", "Número de residuos:Q"],
+    ).properties(height=270)
+    grafico_resultados = grafico_resultados.configure(background="#FFFFFF").configure_view(fill="#FFFFFF", strokeOpacity=0).configure_axis(
+        labelColor="#52645A", titleColor="#52645A", tickColor="#DCE5DC"
     )
+    st.altair_chart(grafico_resultados, use_container_width=True)
 
     st.subheader("Matriz de confusión")
     st.caption("Las filas son las categorías reales; las columnas, las predichas. La diagonal contiene los aciertos.")
@@ -357,6 +465,8 @@ with st.expander("Ver análisis de datos y evaluación del modelo"):
     matriz_df.index.name = "Categoría real"
     st.dataframe(matriz_df, alt="Matriz que muestra aciertos y confusiones por categoría")
     st.caption("La evaluación es inicial: el dataset es pequeño y las normas pueden variar según el municipio.")
+
+st.markdown('<div class="eco-footer">Proyecto educativo · Orientación de reciclaje</div>', unsafe_allow_html=True)
 
 st.divider()
 st.button("Salir", on_click=cerrar_sesion, help="Cierra esta sesión y borra sus datos.")
