@@ -1,4 +1,4 @@
-# Eco-asistente ♻️
+# Eco-asistente
 
 Aplicación educativa que clasifica residuos escritos en texto y ofrece una orientación sobre la categoría de reciclaje estimada. El proyecto utiliza Python, pandas, `CountVectorizer`, Scikit-learn y Streamlit.
 
