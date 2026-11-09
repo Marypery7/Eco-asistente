@@ -32,6 +32,14 @@ COLORES_CONTENEDOR = {
     "resto": "#7D8884",
 }
 
+ESTILOS_RESULTADO = {
+    "papel y cartón": ("#DCEBFA", "#275E95", "#B4D0EC"),
+    "vidrio": ("#DDF0E5", "#286847", "#B8D9C3"),
+    "envases": ("#FFF1C9", "#775A11", "#EBD58E"),
+    "orgánico": ("#EFE2D8", "#75513A", "#D9C1AE"),
+    "resto": ("#E6EBE9", "#4E5C55", "#CED8D3"),
+}
+
 CONSEJOS = {
     "papel y cartón": "Deposítalo limpio y, si es una caja, pliégala.",
     "vidrio": "Vacía el envase y separa tapas o tapones cuando corresponda.",
@@ -193,6 +201,10 @@ def cargar_recursos():
 
 st.set_page_config(page_title="Eco-asistente", page_icon="♻️", layout="centered")
 st.session_state.setdefault("sesion_cerrada", False)
+st.session_state.setdefault("residuo_pendiente_material", None)
+st.session_state.setdefault("material_seleccionado", "Elige un material")
+st.session_state.setdefault("resultado_categoria", None)
+st.session_state.setdefault("resultado_tipo", None)
 
 st.markdown(
     """
@@ -243,7 +255,18 @@ st.markdown(
     }
     [data-testid="stBaseButton-secondary"] p { color: var(--eco-forest) !important; }
     [data-testid="stBaseButton-secondary"]:hover { background: #dfeae0 !important; border-color: #9eb9a3 !important; }
+    .eco-result {
+        display: flex; flex-direction: column; gap: .2rem;
+        border: 1px solid; border-left-width: 6px; border-radius: 14px;
+        padding: 1rem 1.1rem; margin: .35rem 0 .8rem 0;
+    }
+    .eco-result-label { font-size: .78rem; font-weight: 700; opacity: .84; }
+    .eco-result-value { font-size: 1.12rem; font-weight: 800; line-height: 1.35; }
     [data-testid="stAlert"] { border-radius: 14px; }
+    [data-testid="stAlert"] [data-testid="stMarkdownContainer"],
+    [data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
+        color: #1C2D25 !important;
+    }
     [data-testid="stExpander"] { border: 1px solid #dce6dd; border-radius: 16px; background: rgba(255,255,255,.75); }
     h2, h3 { color: var(--eco-forest); }
     .eco-footer { color: #718077; font-size: .78rem; text-align: center; padding-top: .5rem; }
@@ -345,6 +368,33 @@ def detectar_categoria_o_punto_limpio(residuo, modelo=None, datos=None):
     return modelo.predict([texto])[0]
 
 
+def mostrar_resultado(categoria, tipo_detectado=None):
+    with st.container(border=True):
+        st.markdown("#### Resultado")
+        if tipo_detectado:
+            st.info(f"Tipo identificado: **{tipo_detectado.capitalize()}**")
+        if categoria == MENSAJE_PUNTO_LIMPIO:
+            st.markdown(
+                '<div class="eco-result" style="background:#FCE4E4;color:#973F3F;border-color:#EFBDBD;">'
+                '<span class="eco-result-label">Orientación</span>'
+                '<span class="eco-result-value">Ir al punto limpio</span></div>',
+                unsafe_allow_html=True,
+            )
+            st.write("Este residuo no aparece en las categorías del modelo. Prueba con una descripción más concreta.")
+        else:
+            fondo, texto_color, borde = ESTILOS_RESULTADO.get(
+                categoria, ("#EEF2EF", "#33443B", "#D6E0D8")
+            )
+            destino = NOMBRES_CONTENEDOR.get(categoria, categoria)
+            st.markdown(
+                f'<div class="eco-result" style="background:{fondo};color:{texto_color};border-color:{borde};">'
+                f'<span class="eco-result-label">Deposítalo en</span>'
+                f'<span class="eco-result-value">{destino}</span></div>',
+                unsafe_allow_html=True,
+            )
+            st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
+
+
 if st.session_state["sesion_cerrada"]:
     st.title("Sesión cerrada")
     st.info("Tus datos de esta sesión se han borrado. Para apagar la aplicación local, pulsa Ctrl+C en la terminal donde ejecutaste Streamlit.")
@@ -381,22 +431,61 @@ with st.container(border=True):
 
 if consultar:
     if not residuo.strip():
+        st.session_state["residuo_pendiente_material"] = None
+        st.session_state["resultado_categoria"] = None
+        st.session_state["resultado_tipo"] = None
         st.warning("Escribe un residuo para obtener una orientación.")
     else:
-        with st.container(border=True):
-            tipo_detectado = detectar_tipo_fruta_vegetal(residuo)
-            categoria = detectar_categoria_o_punto_limpio(residuo, modelo, datos)
-            st.markdown("#### Resultado")
-            if tipo_detectado:
-                st.info(f"Tipo identificado: **{tipo_detectado.capitalize()}**")
-            if categoria == MENSAJE_MATERIAL_INDEFINIDO:
-                st.warning("Describe qué envase vas a tirar y, si hace falta, su material. Por ejemplo: botella de cerveza de vidrio o lata de cerveza.")
-            elif categoria == MENSAJE_PUNTO_LIMPIO:
-                st.warning(MENSAJE_PUNTO_LIMPIO)
-                st.write("Este residuo no aparece en las categorías del modelo. Prueba con una descripción más concreta.")
+        tipo_detectado = detectar_tipo_fruta_vegetal(residuo)
+        categoria = detectar_categoria_o_punto_limpio(residuo, modelo, datos)
+        if categoria == MENSAJE_MATERIAL_INDEFINIDO:
+            st.session_state["residuo_pendiente_material"] = residuo.strip()
+            st.session_state["material_seleccionado"] = "Elige un material"
+            st.session_state["resultado_categoria"] = None
+            st.session_state["resultado_tipo"] = None
+        else:
+            st.session_state["residuo_pendiente_material"] = None
+            st.session_state["resultado_categoria"] = categoria
+            st.session_state["resultado_tipo"] = tipo_detectado
+
+if st.session_state["residuo_pendiente_material"]:
+    with st.container(border=True):
+        st.markdown("#### ¿De qué material es el envase?")
+        st.caption(f"Residuo: {st.session_state['residuo_pendiente_material']}")
+        opciones_material = [
+            "Elige un material",
+            "Vidrio o cristal",
+            "Plástico",
+            "Metal o aluminio",
+            "Brik",
+        ]
+        st.selectbox(
+            "Material",
+            opciones_material,
+            key="material_seleccionado",
+            label_visibility="collapsed",
+        )
+        if st.button("Confirmar material", key="confirmar_material", type="primary"):
+            categoria_por_material = {
+                "Vidrio o cristal": "vidrio",
+                "Plástico": "envases",
+                "Metal o aluminio": "envases",
+                "Brik": "envases",
+            }
+            categoria_elegida = categoria_por_material.get(st.session_state["material_seleccionado"])
+            if categoria_elegida is None:
+                st.warning("Elige un material antes de continuar.")
             else:
-                st.success(f"Deposítalo en: {NOMBRES_CONTENEDOR.get(categoria, categoria)}")
-                st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
+                st.session_state["resultado_categoria"] = categoria_elegida
+                st.session_state["resultado_tipo"] = None
+                st.session_state["residuo_pendiente_material"] = None
+                st.rerun()
+
+if st.session_state["resultado_categoria"] is not None:
+    mostrar_resultado(
+        st.session_state["resultado_categoria"],
+        st.session_state["resultado_tipo"],
+    )
 
 # Estas gráficas ayudan a explicar tanto los datos como los aciertos y errores del modelo.
 with st.expander("Ver análisis de datos y evaluación del modelo"):
@@ -461,9 +550,38 @@ with st.expander("Ver análisis de datos y evaluación del modelo"):
 
     st.subheader("Matriz de confusión")
     st.caption("Las filas son las categorías reales; las columnas, las predichas. La diagonal contiene los aciertos.")
-    matriz_df = pd.DataFrame(matriz, index=categorias, columns=categorias)
-    matriz_df.index.name = "Categoría real"
-    st.dataframe(matriz_df, alt="Matriz que muestra aciertos y confusiones por categoría")
+    celdas_matriz = []
+    for fila, categoria_real in enumerate(categorias):
+        for columna, categoria_predicha in enumerate(categorias):
+            diagonal = categoria_real == categoria_predicha
+            color_fondo = COLORES_CONTENEDOR[categoria_real] if diagonal else "#F5F8F4"
+            color_texto = "#3F3215" if diagonal and categoria_real == "envases" else ("#FFFFFF" if diagonal else "#26352D")
+            celdas_matriz.append({
+                "Categoría real": categoria_real,
+                "Predicción": categoria_predicha,
+                "Ejemplos": int(matriz[fila, columna]),
+                "Color": color_fondo,
+                "Color texto": color_texto,
+            })
+    datos_matriz = pd.DataFrame(celdas_matriz)
+    celdas = alt.Chart(datos_matriz).mark_rect(stroke="#D9E3DB", strokeWidth=1).encode(
+        x=alt.X("Predicción:N", sort=categorias, axis=alt.Axis(title=None, labelAngle=-18, ticks=False, domain=False)),
+        y=alt.Y("Categoría real:N", sort=list(reversed(categorias)), axis=alt.Axis(title=None, ticks=False, domain=False)),
+        color=alt.Color("Color:N", scale=None, legend=None),
+        tooltip=["Categoría real:N", "Predicción:N", "Ejemplos:Q"],
+    )
+    numeros = alt.Chart(datos_matriz).mark_text(fontSize=13, fontWeight="bold").encode(
+        x=alt.X("Predicción:N", sort=categorias),
+        y=alt.Y("Categoría real:N", sort=list(reversed(categorias))),
+        text=alt.Text("Ejemplos:Q", format="d"),
+        color=alt.Color("Color texto:N", scale=None, legend=None),
+    )
+    grafico_matriz = (celdas + numeros).properties(height=260).configure(
+        background="#FFFFFF"
+    ).configure_view(fill="#FFFFFF", strokeOpacity=0).configure_axis(
+        labelColor="#52645A", labelFontSize=11, titleColor="#52645A"
+    )
+    st.altair_chart(grafico_matriz, use_container_width=True)
     st.caption("La evaluación es inicial: el dataset es pequeño y las normas pueden variar según el municipio.")
 
 st.markdown('<div class="eco-footer">Proyecto educativo · Orientación de reciclaje</div>', unsafe_allow_html=True)
