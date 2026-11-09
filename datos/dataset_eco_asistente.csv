@@ -1,161 +1,697 @@
-﻿id,residuo,categoria,destino_app,consejo_reciclaje
-1,bombilla led,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un punto limpio o a un contenedor específico de residuos eléctricos; no va al vidrio.
-2,bombilla de bajo consumo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Contiene componentes que requieren gestión específica. Deposítala en un punto de recogida habilitado.
-3,fluorescente,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo entero a un punto limpio o a un establecimiento con recogida específica.
-4,bombilla halógena,gris,Contenedor gris,"En general, al contenedor de resto si no existe recogida específica; consulta las normas municipales."
-5,espejo roto,gris,Contenedor gris,Envuélvelo para evitar cortes y deposítalo en resto; no va al contenedor verde.
-6,vaso de cristal roto,gris,Contenedor gris,Envuélvelo para evitar cortes y deposítalo en resto; no es un envase de vidrio.
-7,copa de cristal,gris,Contenedor gris,La cristalería no va al iglú verde; deposítala en resto o consulta el punto limpio si es mucha cantidad.
-8,fuente de horno de vidrio,gris,Contenedor gris,El vidrio resistente al calor no es un envase; deposítalo en resto si el municipio no indica otra opción.
-9,tapón de corcho natural,gris,Contenedor gris,"Consulta si hay recogida específica de corcho; si no, deposítalo en resto o compostaje doméstico si está admitido."
-10,corcho blanco de embalaje,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al punto limpio si es voluminoso; pequeñas cantidades limpias pueden tener normas locales distintas.
-11,bandeja de porexpan limpia,amarillo,Contenedor amarillo,"Si es un envase doméstico, deposítala en el contenedor amarillo."
-12,envase de yogur,amarillo,Contenedor amarillo,Vacía los restos y deposítalo en el contenedor amarillo; no hace falta lavarlo a fondo.
-13,tarrina de helado de plástico,amarillo,Contenedor amarillo,"Si es un envase, vacíala y deposítala en el amarillo."
-14,blíster de medicamentos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Lleva el blíster vacío o con restos junto con el envase del medicamento al punto SIGRE de la farmacia.
-15,caja de medicamento de cartón,azul,Contenedor azul,Deposita la caja de cartón vacía en el azul; el prospecto también puede ir al azul.
-16,medicamento caducado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al Punto SIGRE de una farmacia. No lo tires al váter ni a la basura.
-17,termómetro de mercurio,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo rompas ni lo manipules innecesariamente. Consulta al punto limpio o al servicio municipal para su entrega segura.
-18,termómetro digital,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es un residuo eléctrico/electrónico; entrégalo en un punto limpio o tienda con recogida.
-19,jeringuilla doméstica usada,gris,Contenedor gris,No la deposites suelta en reciclaje. Usa un recipiente rígido y consulta el sistema sanitario o municipal local para su entrega segura.
-20,mascarilla desechable,gris,Contenedor gris,"Deposítala en el contenedor de resto, nunca en el amarillo."
-21,guantes de látex usados,gris,Contenedor gris,"Deposítalos en resto, salvo que procedan de un entorno sanitario con protocolo específico."
-22,pañal usado,gris,Contenedor gris,"Deposítalo en el contenedor de resto, bien cerrado."
-23,toallita húmeda,gris,Contenedor gris,Va al contenedor de resto. Nunca la tires al inodoro.
-24,compresa usada,gris,Contenedor gris,"Deposítala en resto, envuelta. No va al váter."
-25,bastoncillo de algodón,gris,Contenedor gris,Deposítalo en resto; no lo tires al inodoro.
-26,hilo dental,gris,Contenedor gris,Deposítalo en resto; no es reciclable en los contenedores habituales.
-27,cápsula de café de aluminio,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un punto de recogida de cápsulas o al sistema indicado por el fabricante; no se debe asumir que va al amarillo.
-28,cápsula de café compostable,gris,Contenedor gris,"Comprueba que esté certificada y si tu municipio admite este residuo en orgánica; si no, resto."
-29,aceite de cocina usado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Guárdalo frío en una botella cerrada y llévalo al contenedor específico de aceite usado o punto limpio.
-30,aceite de motor usado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es un residuo peligroso. Entrégalo en un punto limpio o gestor autorizado; nunca al desagüe.
-31,pintura sobrante,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala cerrada al punto limpio. No viertas pintura líquida por el fregadero.
-32,disolvente,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Residuo peligroso: conserva el envase cerrado y entrégalo en un punto limpio.
-33,esmalte de uñas,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si contiene producto, llévalo al punto limpio como residuo químico doméstico; consulta las normas locales."
-34,aerosol de pintura lleno,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al punto limpio; no lo perfores ni lo quemes.
-35,spray desodorante vacío,amarillo,Contenedor amarillo,"Si está completamente vacío y es un envase metálico, deposítalo en el amarillo."
-36,spray insecticida con producto,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si contiene producto, entrégalo en un punto limpio; no lo vacíes deliberadamente."
-37,pila alcalina,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en un contenedor específico de pilas, en comercios o punto limpio."
-38,pila botón,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un contenedor específico de pilas; mantenla fuera del alcance de niños y mascotas.
-39,batería de móvil,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en recogida de pilas/baterías o en un punto limpio; evita perforarla.
-40,batería de coche,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégala en un taller, punto limpio o gestor autorizado; es un residuo peligroso."
-41,cargador de móvil,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o a una tienda con recogida de aparatos eléctricos.
-42,cable USB,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítalo en un punto limpio o contenedor/establecimiento de recogida de residuos eléctricos.
-43,auriculares rotos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Son residuos eléctricos; llévalos a un punto limpio o tienda con recogida.
-44,móvil viejo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégalo en un punto limpio o comercio con recogida de RAEE; borra tus datos antes.
-45,ordenador portátil viejo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o comercio autorizado para residuos electrónicos.
-46,teclado de ordenador,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o establecimiento que recoja aparatos eléctricos.
-47,ratón de ordenador,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítalo en recogida de residuos eléctricos/electrónicos.
-48,televisor,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Solicita recogida de voluminosos o llévalo a un punto limpio; no lo abandones en la calle.
-49,pequeño electrodoméstico,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Tostadora, batidora o secador: entrégalo en punto limpio o tienda con recogida."
-50,cartucho de tinta,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Devuélvelo a un punto de recogida del fabricante, tienda o punto limpio."
-51,toner de impresora,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto de recogida de tóner o punto limpio; evita vaciar el polvo.
-52,ropa usada en buen estado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en un contenedor textil o entrégala a una entidad de reutilización.
-53,zapatos viejos,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si están limpios y secos, llévalos al contenedor textil o punto de reutilización."
-54,ropa mojada o muy sucia,gris,Contenedor gris,"Si no es reutilizable y está muy contaminada, deposítala en resto; consulta opciones municipales."
-55,sábana vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégala en el contenedor textil si está limpia y seca.
-56,bolso viejo,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si es reutilizable, llévalo a recogida textil; si no, consulta el punto limpio o resto según material."
-57,juguete de plástico sin pilas,gris,Contenedor gris,"No es un envase, por lo que no va al amarillo. Si es voluminoso, llévalo al punto limpio."
-58,juguete electrónico,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Retira las pilas si es posible y deposítalas en su contenedor; entrega el juguete como RAEE.
-59,peluche viejo,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si está limpio y seco, consulta el contenedor textil; si no se admite, resto."
-60,colchón,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Solicita recogida municipal de voluminosos o llévalo al punto limpio.
-61,mueble de madera,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Solicita recogida de voluminosos o llévalo al punto limpio; no lo abandones junto al contenedor.
-62,sartén vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No es un envase. Llévala al punto limpio si el municipio no ofrece recogida de metales.
-63,olla vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Deposítala en punto limpio o sistema municipal de metales/voluminosos.
-64,percha de plástico,gris,Contenedor gris,No es un envase; consulta si el punto limpio recoge objetos de plástico duro.
-65,cepillo de dientes,gris,Contenedor gris,Deposítalo en resto o en un programa específico de recogida si existe.
-66,maquinilla desechable,gris,Contenedor gris,"Deposítala en resto, protegida para evitar cortes."
-67,cuchilla de afeitar,gris,Contenedor gris,Guárdala en un recipiente rígido antes de tirarla a resto; nunca suelta.
-68,cerámica rota,gris,Contenedor gris,Envuélvela para evitar cortes y deposítala en resto; grandes cantidades al punto limpio.
-69,plato de porcelana,gris,Contenedor gris,No va al contenedor verde ni al azul; deposítalo en resto.
-70,maceta de barro,gris,Contenedor gris,Deposítala en resto si es pequeña; para grandes cantidades consulta el punto limpio.
-71,tierra de macetas,gris,Contenedor gris,"Pequeñas cantidades, en resto; no la viertas en alcantarillas ni parques. Consulta normas locales."
-72,arena de gato usada,gris,Contenedor gris,"Deposítala en resto, bien cerrada; no la tires al inodoro."
-73,excrementos de mascota,gris,Contenedor gris,"Recógelos en una bolsa y deposítalos en resto, según la normativa municipal."
-74,restos de comida cocinada,marron,Contenedor marrón,Deposítalos en el contenedor marrón si está implantado en tu municipio.
-75,cáscara de huevo,marron,Contenedor marrón,Deposítala en el contenedor marrón si está disponible.
-76,posos de café,marron,Contenedor marrón,Deposítalos en el contenedor marrón; los filtros de papel sin plástico también suelen admitirse.
-77,bolsa de té sin grapa,marron,Contenedor marrón,Deposítala en el contenedor marrón si no contiene elementos no compostables.
-78,servilleta de papel sucia de comida,marron,Contenedor marrón,"Puede ir al marrón si está manchada de restos orgánicos y tu municipio lo admite; si no, resto."
-79,pañuelo de papel usado,gris,Contenedor gris,"Por higiene, deposítalo en resto, salvo indicación municipal distinta."
-80,huesos grandes,marron,Contenedor marrón,"En general van al marrón, aunque algunos municipios establecen excepciones."
-81,concha de mejillón,marron,Contenedor marrón,"Consulta las normas locales: la admisión de conchas puede variar; si no se admite en marrón, resto."
-82,tapón de plástico de botella,amarillo,Contenedor amarillo,Deposítalo junto con la botella en el amarillo.
-83,tapón de corcho sintético,amarillo,Contenedor amarillo,"Si forma parte de un envase, deposítalo en el amarillo."
-84,papel de aluminio limpio,amarillo,Contenedor amarillo,Haz una bola compacta y deposítala en el amarillo.
-85,papel de aluminio con mucha comida,gris,Contenedor gris,"Si está muy sucio y no se puede vaciar, deposítalo en resto."
-86,papel plastificado,gris,Contenedor gris,"Si no se puede separar la capa plástica, deposítalo en resto."
-87,papel de regalo metalizado,gris,Contenedor gris,"Si tiene acabado metalizado o plastificado, normalmente va a resto; el papel simple puede ir al azul."
-88,caja de pizza limpia,azul,Contenedor azul,La parte limpia de cartón puede ir al azul.
-89,caja de pizza con grasa,gris,Contenedor gris,La parte muy manchada de grasa va a resto; separa y recicla la parte limpia en azul.
-90,papel de cocina limpio,azul,Contenedor azul,"Si está limpio y seco, puede ir al azul."
-91,papel de cocina con aceite o comida,marron,Contenedor marrón,"Si está manchado de restos orgánicos, puede ir al marrón cuando el municipio lo admita."
-92,sobre acolchado con burbujas,gris,Contenedor gris,"Separa papel y plástico si es sencillo; cada parte se deposita según material. Si no, resto."
-93,envase de cartón de leche,amarillo,Contenedor amarillo,"Es un brik compuesto y va al contenedor amarillo, no al azul."
-94,brik de zumo,amarillo,Contenedor amarillo,Vacía el envase y deposítalo en el amarillo.
-95,bandeja de aluminio de comida,amarillo,Contenedor amarillo,"Si es un envase, vacíala y deposítala en el amarillo."
-96,papel de horno usado,gris,Contenedor gris,El papel de horno suele llevar tratamiento antiadherente; deposítalo en resto.
-97,pañal de adulto,gris,Contenedor gris,"Deposítalo en resto, bien cerrado."
-98,ceniza fría,gris,Contenedor gris,Solo cuando esté completamente fría; deposítala en resto. Nunca tires cenizas calientes.
-99,colilla de cigarrillo,gris,Contenedor gris,Asegúrate de que esté apagada y deposítala en resto; nunca en la calle.
-100,chicle,gris,Contenedor gris,"Deposítalo en resto, no en el suelo ni en el orgánico."
-101,cinta adhesiva,gris,Contenedor gris,Deposítala en resto; no es papel reciclable.
-102,globo,gris,Contenedor gris,Deposítalo en resto; no va al contenedor amarillo.
-103,red de frutas,amarillo,Contenedor amarillo,"Si es un envase de plástico, deposítala en el amarillo."
-104,malla de patatas,amarillo,Contenedor amarillo,"Si es el envoltorio de venta del alimento, va al amarillo."
-105,envase de medicamento vacío de plástico,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al Punto SIGRE de la farmacia junto con los envases de medicamentos.
-106,frasco de perfume vacío,verde,Contenedor verde,"Si es un frasco de vidrio de envase, deposítalo en el verde; retira el tapón y deposítalo según material."
-107,tapón metálico de botella,amarillo,Contenedor amarillo,Deposítalo en el contenedor amarillo.
-108,tarro de conservas,verde,Contenedor verde,Vacía el tarro y deposítalo en el contenedor verde; la tapa metálica va al amarillo.
-109,cristal de ventana,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No es un envase de vidrio. Llévalo al punto limpio o consulta la recogida municipal.
-110,parabrisas roto,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es un residuo especial; consulta un punto limpio o un gestor autorizado.
-111,extintor,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo vacíes ni lo manipules. Consulta al proveedor o a un punto limpio para su gestión.
-112,bombona de butano,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Devuélvela al distribuidor o consulta el sistema autorizado de recogida; no la abandones.
-113,cartón grande de embalaje,azul,Contenedor azul,"Pliega el cartón y deposítalo en el contenedor azul; si no cabe, usa el punto limpio."
-114,caja de madera de fruta,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la recogida municipal o el punto limpio; no va al azul ni al amarillo.
-115,cuchillo de cocina viejo,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo al punto limpio o sistema municipal de metales, protegido para evitar cortes."
-116,aguja de coser,gris,Contenedor gris,Guárdala en un recipiente rígido antes de depositarla en resto.
-117,radiografía,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévala a un punto limpio o a un centro con recogida específica; no va al contenedor azul.
-118,negativos fotográficos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta un punto limpio para su gestión; no van al contenedor amarillo ni azul.
-119,piscina hinchable rota,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por su tamaño y mezcla de materiales, consulta el punto limpio o recogida de voluminosos."
-120,manguera de jardín,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No es un envase; consulta el punto limpio o la recogida municipal.
-121,persiana rota,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la recogida de voluminosos o el punto limpio.
-122,neumático usado,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrégalo en un taller o punto de recogida autorizado; no lo abandones.
-123,ropa con aceite de motor,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Al estar contaminada, consulta un punto limpio o gestor autorizado; no la mezcles con textil reutilizable."
-124,envase de lejía vacío,amarillo,Contenedor amarillo,Vacía el envase y deposítalo en el amarillo; no es necesario enjuagarlo a fondo.
-125,envase de pesticida con restos,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo reutilices ni lo enjuagues en el desagüe. Consulta un gestor autorizado o punto de recogida específico.
-126,producto de limpieza caducado,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si queda producto, consulta el punto limpio para residuos químicos domésticos; no lo viertas al desagüe."
-127,laca de uñas vacía,gris,Contenedor gris,"Si está completamente vacía y el municipio no dispone de recogida específica, consulta sus indicaciones; no la mezcles con envases si conserva producto."
-128,caja de cerillas,azul,Contenedor azul,"Si está vacía y es de cartón, deposítala en el azul."
-129,cerillas usadas,gris,Contenedor gris,Asegúrate de que estén completamente apagadas y deposítalas en resto.
-130,bolsa de plástico de supermercado,amarillo,Contenedor amarillo,Deposítala en el contenedor amarillo.
-131,bolsa compostable certificada,marron,Contenedor marrón,Solo va al marrón si está certificada y tu municipio acepta bolsas compostables.
-132,caja de huevos de cartón,azul,Contenedor azul,Deposítala en el contenedor azul si está limpia.
-133,caja de huevos de plástico,amarillo,Contenedor amarillo,"Si es un envase de plástico, deposítala en el amarillo."
-134,bandeja de carne de poliestireno,amarillo,Contenedor amarillo,"Si es un envase, deposítala en el amarillo una vez vacía."
-135,envase de comida con restos,amarillo,Contenedor amarillo,Retira los restos grandes y deposítalo en el amarillo si es un envase; no hace falta lavarlo a fondo.
-136,papel de charcutería plastificado,gris,Contenedor gris,"Si lleva una capa plástica inseparable, deposítalo en resto."
-137,lata de conserva con restos,amarillo,Contenedor amarillo,Vacía los restos y deposítala en el amarillo.
-138,papel de periódico mojado,azul,Contenedor azul,"Si no está contaminado con grasa o sustancias, puede ir al azul; escúrrelo y sigue la norma local."
-139,libro viejo,azul,Contenedor azul,"Si no se puede reutilizar, deposítalo en el azul; retira tapas u otros materiales si son fácilmente separables."
-140,fotografía en papel,gris,Contenedor gris,Las fotografías tienen recubrimientos y no suelen ir al azul; deposítalas en resto.
-141,CD o DVD,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o a una recogida específica de soportes digitales.
-142,disquete,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Llévalo a un punto limpio o recogida de residuos electrónicos.
-143,cinta VHS,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por sus materiales mezclados, consulta el punto limpio."
-144,cargador portátil powerbank,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Es una batería y aparato electrónico; llévalo a recogida de pilas/baterías o RAEE. No lo perfores.
-145,vapeador desechable,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Contiene batería y componentes electrónicos; llévalo a recogida de RAEE o baterías, nunca al resto."
-146,cigarrillo electrónico,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Entrega el aparato en un punto de recogida de RAEE; separa la batería solo si es extraíble y seguro.
-147,panel solar pequeño,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta un punto limpio o gestor autorizado para residuos eléctricos/electrónicos.
-148,detector de humo,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo desmontes. Consulta al fabricante o punto limpio por si requiere gestión específica.
-149,cartucho de gas de camping,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. No lo perfores ni lo arrojes al fuego. Consulta el punto limpio o el sistema municipal para envases a presión.
-150,aceite de freír,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Déjalo enfriar, guárdalo en una botella cerrada y llévalo al contenedor de aceite usado."
-151,restos de poda pequeños,marron,Contenedor marrón,Deposítalos en el marrón solo si el municipio los admite; grandes cantidades requieren recogida vegetal o punto limpio.
-152,ramas grandes,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta el servicio municipal de restos de poda o el punto limpio.
-153,corona de flores artificial,gris,Contenedor gris,"Al mezclar materiales, suele ir a resto; separa componentes si es sencillo."
-154,árbol de navidad natural,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la campaña municipal de recogida de árboles o el servicio de restos vegetales.
-155,árbol de navidad artificial,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si está en buen estado, reutilízalo; si no, consulta recogida de voluminosos o punto limpio."
-156,cochecito de bebé,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si no se puede reutilizar, consulta recogida de voluminosos o punto limpio."
-157,silla infantil de coche,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Si no se puede reutilizar de forma segura, consulta el punto limpio o recogida municipal de voluminosos."
-158,maleta rota,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por sus materiales y tamaño, consulta el punto limpio o recogida de voluminosos."
-159,alfombra vieja,punto_limpio,Llevar a punto limpio,Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Consulta la recogida municipal de voluminosos o el punto limpio.
-160,persiana de plástico,punto_limpio,Llevar a punto limpio,"Este residuo no debe depositarse en los contenedores habituales. Llévalo a un punto limpio o consulta un punto de recogida específico de tu municipio. Por su tamaño y por no ser un envase, llévala al punto limpio o solicita recogida de voluminosos."
+residuo,categoria
+cuaderno de papel,papel y cartón
+cuaderno usado,papel y cartón
+periódico de papel,papel y cartón
+revista de papel,papel y cartón
+caja de cartón limpia,papel y cartón
+caja pequeña de cartón,papel y cartón
+sobre de papel,papel y cartón
+hoja de papel,papel y cartón
+folleto de papel,papel y cartón
+libro de papel,papel y cartón
+carpeta de cartón,papel y cartón
+huevera de cartón,papel y cartón
+tubo de cartón,papel y cartón
+rollo de papel vacío,papel y cartón
+bolsa de papel limpia,papel y cartón
+cartón de embalaje limpio,papel y cartón
+papel de oficina,papel y cartón
+cartulina limpia,papel y cartón
+caja de cereales de cartón,papel y cartón
+papel de regalo limpio,papel y cartón
+caja de zapatos de cartón,papel y cartón
+caja de galletas de cartón,papel y cartón
+caja de pasta de cartón,papel y cartón
+caja de té de cartón,papel y cartón
+caja de huevos de cartón limpia,papel y cartón
+embalaje de cartón,papel y cartón
+papel de impresora,papel y cartón
+hoja de cuaderno,papel y cartón
+hojas de apuntes,papel y cartón
+catálogo de papel,papel y cartón
+cómic de papel,papel y cartón
+guía telefónica de papel,papel y cartón
+sobre de carta,papel y cartón
+sobre de papel sin ventana de plástico,papel y cartón
+bolsa de papel de panadería,papel y cartón
+bolsa de papel de compras,papel y cartón
+papel kraft limpio,papel y cartón
+papel de envolver sin plastificar,papel y cartón
+papel de periódico,papel y cartón
+hoja de planta,orgánico
+hojas de planta,orgánico
+restos de vegetales,orgánico
+vegetales,orgánico
+verduras,orgánico
+restos de verduras,orgánico
+verdura cocinada,orgánico
+tallos de planta,orgánico
+hoja de lechuga,orgánico
+restos de hortalizas,orgánico
+hojas de ensalada,orgánico
+hoja de espinaca,orgánico
+cáscara de calabaza,orgánico
+restos de tomate,orgánico
+restos de pimiento,orgánico
+restos de cebolla,orgánico
+hoja de folio,papel y cartón
+hoja de impresora,papel y cartón
+hoja de revista,papel y cartón
+papel de cuaderno,papel y cartón
+hoja de bloc,papel y cartón
+cartón de caja,papel y cartón
+revista de moda,papel y cartón
+folleto publicitario de papel,papel y cartón
+manual de instrucciones de papel,papel y cartón
+postal de papel,papel y cartón
+cartón ondulado limpio,papel y cartón
+bandeja de cartón limpia,papel y cartón
+separador de cartón de embalaje,papel y cartón
+tubo de cartón de cocina,papel y cartón
+tubo de cartón de papel higiénico,papel y cartón
+papel de notas,papel y cartón
+papel de dibujo limpio,papel y cartón
+botella de vidrio,vidrio
+frasco de vidrio,vidrio
+tarro de vidrio,vidrio
+botella de vino de vidrio,vidrio
+botella de agua de vidrio,vidrio
+frasco de mermelada de vidrio,vidrio
+tarro de conserva de vidrio,vidrio
+botella de aceite de vidrio,vidrio
+botella de cerveza de vidrio,vidrio
+botella cerveza,vidrio
+frasco de perfume de vidrio,vidrio
+envase de vidrio,vidrio
+botella de refresco de vidrio,vidrio
+tarro de aceitunas de vidrio,vidrio
+botella de zumo de vidrio,vidrio
+frasco de comida de vidrio,vidrio
+botella de vidrio vacía,vidrio
+tarro de vidrio vacío,vidrio
+frasco de vidrio vacío,vidrio
+botella de cava de vidrio,vidrio
+envase de colonia de vidrio,vidrio
+botella de sidra de vidrio,vidrio
+botella de vinagre de vidrio,vidrio
+botella de agua con gas de vidrio,vidrio
+botella de salsa de vidrio,vidrio
+frasco de conservas de vidrio,vidrio
+tarro de legumbres de vidrio,vidrio
+tarro de miel de vidrio,vidrio
+tarro de tomate frito de vidrio,vidrio
+frasco de café soluble de vidrio,vidrio
+tarro de pepinillos de vidrio,vidrio
+frasco de aceitunas de vidrio,vidrio
+botella pequeña de vidrio,vidrio
+botella de licor de vidrio,vidrio
+botella de champán de vidrio,vidrio
+botella de cerveza sin alcohol de vidrio,vidrio
+frasco cosmético de vidrio vacío,vidrio
+frasco de salsa de vidrio,vidrio
+tarro de mermelada vacío,vidrio
+botella de leche de vidrio,vidrio
+botella de zumo vacía de vidrio,vidrio
+frasco de especias de vidrio,vidrio
+frasco de cristal de alimentos,vidrio
+tarro de comida infantil de vidrio,vidrio
+envase de yogur de vidrio,vidrio
+botellín de cerveza de vidrio,vidrio
+botella retornable de vidrio rota,vidrio
+tarro de vidrio de aceitunas vacío,vidrio
+frasco de perfume vacío de vidrio,vidrio
+botella de agua mineral de vidrio,vidrio
+botella de refresco vacía de vidrio,vidrio
+botella de plástico,envases
+botella plástica,envases
+lata de aluminio,envases
+lata de refresco,envases
+lata de conserva metálica,envases
+brik de leche,envases
+brik de zumo,envases
+envase de yogur de plástico,envases
+vaso de yogur de plástico,envases
+bandeja de plástico,envases
+bolsa de plástico,envases
+film de plástico,envases
+tapón de plástico,envases
+botella de detergente de plástico,envases
+bote de champú de plástico,envases
+envoltorio de plástico,envases
+papel de aluminio limpio,envases
+bandeja de poliestireno,envases
+malla de frutas de plástico,envases
+aerosol vacío,envases
+botella de agua de plástico,envases
+botella de refresco de plástico,envases
+botella de leche de plástico,envases
+garrafa de agua de plástico,envases
+botella de suavizante de plástico,envases
+bote de gel de baño de plástico,envases
+bote de crema de plástico,envases
+envase de detergente vacío,envases
+bandeja de carne de plástico,envases
+bandeja de fruta de plástico,envases
+tarrina de helado de plástico,envases
+huevera de plástico,envases
+anillas de plástico de latas,envases
+bolsa de patatas fritas,envases
+bolsa de galletas,envases
+bolsa de golosinas,envases
+paquete de café de plástico,envases
+paquete de pasta de plástico,envases
+bolsa de legumbres de plástico,envases
+bolsa de congelados,envases
+envoltorio de chocolate,envases
+envoltorio de caramelo,envases
+papel de aluminio de envolver,envases
+bandeja de aluminio de comida,envases
+lata de bebida energética,envases
+lata de tomate,envases
+lata de atún,envases
+brik de caldo,envases
+brik de tomate triturado,envases
+brik de nata,envases
+brik de bebida vegetal,envases
+bolsa de plástico transparente,envases
+plástico para envolver una bandeja,envases
+envase de toallitas vacío,envases
+botella de aceite de plástico vacía,envases
+bote de cacao de plástico,envases
+red de naranjas de plástico,envases
+tapa de plástico de un envase,envases
+tapa metálica de un envase,envases
+cáscara de plátano,orgánico
+piel de naranja,orgánico
+restos de manzana,orgánico
+restos de fruta,orgánico
+restos de verdura,orgánico
+cáscara de huevo,orgánico
+posos de café,orgánico
+bolsa de té usada,orgánico
+restos de comida,orgánico
+espinas de pescado,orgánico
+huesos de comida,orgánico
+cáscara de patata,orgánico
+hojas de lechuga,orgánico
+restos de arroz,orgánico
+restos de pasta,orgánico
+pan duro,orgánico
+servilleta sucia de comida,orgánico
+papel de cocina sucio,orgánico
+restos de carne cocinada,orgánico
+restos de pescado cocinado,orgánico
+piel de pera,orgánico
+piel de manzana,orgánico
+piel de melocotón,orgánico
+piel de kiwi,orgánico
+cáscara de mandarina,orgánico
+cáscara de limón,orgánico
+cáscara de melón,orgánico
+cáscara de sandía,orgánico
+hueso de aguacate,orgánico
+restos de zanahoria,orgánico
+restos de calabacín,orgánico
+hojas de espinaca,orgánico
+hojas secas de ensalada,orgánico
+cáscaras de frutos secos,orgánico
+posos de café con filtro de papel,orgánico
+restos de infusión,orgánico
+pan mohoso,orgánico
+restos de pizza sin envase,orgánico
+restos de tortilla,orgánico
+restos de legumbres cocinadas,orgánico
+restos de huevo,orgánico
+piel de ajo,orgánico
+piel de cebolla,orgánico
+hueso de melocotón,orgánico
+pequeños restos de plantas,orgánico
+flores marchitas,orgánico
+hojas de plantas,orgánico
+servilleta de papel con restos de comida,orgánico
+pañal usado,resto
+toallita húmeda usada,resto
+cepillo de dientes de plástico,resto
+esponja de cocina usada,resto
+vaso roto de cerámica,resto
+plato roto de cerámica,resto
+taza rota de porcelana,resto
+bastoncillo de algodón usado,resto
+polvo de barrer,resto
+colilla de cigarrillo,resto
+mascarilla usada,resto
+compresa usada,resto
+arena de gato usada,resto
+cuchilla de afeitar usada,resto
+juguete roto de plástico,resto
+bolígrafo usado,resto
+goma de borrar usada,resto
+guantes de goma usados,resto
+bolsa de aspiradora llena,resto
+copa rota de cristal,resto
+vaso de cristal roto,resto
+espejo pequeño roto,resto
+cristal de ventana roto,resto
+bombilla incandescente rota,resto
+ceniza fría de chimenea,resto
+pelo y polvo recogidos al barrer,resto
+excrementos de mascota,resto
+arena absorbente de mascota,resto
+pañuelo de papel usado,resto
+papel plastificado,resto
+papel de aluminio muy sucio,resto
+envoltorio de comida muy sucio,resto
+cerámica rota,resto
+maceta de plástico rota que no es envase,resto
+percha de plástico,resto
+manguera de plástico rota,resto
+juguete pequeño de plástico que no es envase,resto
+objeto de plástico que no es envase,resto
+objeto metálico pequeño que no es envase,resto
+cápsula de café usada,resto
+corcho sintético,resto
+chicle usado,resto
+restos de barrer,resto
+estropajo usado,resto
+cinta adhesiva usada,resto
+papel térmico de recibo,resto
+caja de cartón de una lámpara,papel y cartón
+caja de cartón de zapatos usada,papel y cartón
+caja de cartón de galletas vacía,papel y cartón
+caja de cartón de cereales vacía,papel y cartón
+caja de cartón de medicamentos vacía,papel y cartón
+caja de cartón de perfume vacía,papel y cartón
+caja de cartón de pequeño electrodoméstico,papel y cartón
+caja de cartón de una compra online,papel y cartón
+caja de cartón de mudanza limpia,papel y cartón
+caja de cartón de pizza limpia,papel y cartón
+cartón de una caja de leche,papel y cartón
+cartón de una caja de huevos limpio,papel y cartón
+cartón de una caja de juguetes,papel y cartón
+cartón de una caja de regalo,papel y cartón
+cartón de una caja de té,papel y cartón
+cartón ondulado de embalaje,papel y cartón
+cartón de una caja de zapatos plegada,papel y cartón
+papel de periódico arrugado,papel y cartón
+periódico viejo del domingo,papel y cartón
+revista de decoración usada,papel y cartón
+revista de viajes vieja,papel y cartón
+revista de cocina usada,papel y cartón
+catálogo comercial de papel,papel y cartón
+folleto de supermercado de papel,papel y cartón
+folleto turístico de papel,papel y cartón
+tríptico informativo de papel,papel y cartón
+documento impreso por ambas caras,papel y cartón
+papeles de apuntes de clase,papel y cartón
+hojas de examen escritas,papel y cartón
+hojas de una agenda de papel,papel y cartón
+hojas de un calendario de papel,papel y cartón
+cuaderno escolar terminado,papel y cartón
+libreta de notas de papel,papel y cartón
+bloc de dibujo de papel,papel y cartón
+hojas de una enciclopedia vieja,papel y cartón
+libro de texto usado,papel y cartón
+novela de papel vieja,papel y cartón
+cómic de papel usado,papel y cartón
+partitura impresa en papel,papel y cartón
+mapa de papel viejo,papel y cartón
+sobre marrón de papel,papel y cartón
+sobre acolchado de papel sin plástico,papel y cartón
+bolsa de papel de una farmacia,papel y cartón
+bolsa de papel de una panadería,papel y cartón
+bolsa de papel de una tienda de ropa,papel y cartón
+papel de envolver un paquete,papel y cartón
+papel de regalo sin plastificar,papel y cartón
+papel de seda limpio,papel y cartón
+papel kraft de embalaje limpio,papel y cartón
+funda de papel de una revista,papel y cartón
+botella de cerveza vacía de vidrio,vidrio
+botella de vino tinto de vidrio vacía,vidrio
+botella de vino blanco de vidrio vacía,vidrio
+botella de vino rosado de vidrio,vidrio
+botella de vermut de vidrio,vidrio
+botella de sidra vacía de vidrio,vidrio
+botella de cava vacía de vidrio,vidrio
+botella de champán de vidrio vacía,vidrio
+botella de agua mineral de vidrio vacía,vidrio
+botella de agua con gas de vidrio vacía,vidrio
+botella de refresco de cola de vidrio,vidrio
+botella de gaseosa de vidrio,vidrio
+botella de tónica de vidrio,vidrio
+botella de kombucha de vidrio,vidrio
+botella de cerveza artesanal de vidrio,vidrio
+botella de zumo de vidrio vacía,vidrio
+botella de batido de vidrio vacía,vidrio
+botella de horchata de vidrio vacía,vidrio
+botella de salsa picante de vidrio,vidrio
+botella de aceite de oliva de vidrio vacía,vidrio
+botella de vinagre de manzana de vidrio,vidrio
+frasco de aceitunas de vidrio vacío,vidrio
+frasco de espárragos de vidrio vacío,vidrio
+frasco de alcachofas de vidrio vacío,vidrio
+frasco de pimientos de vidrio vacío,vidrio
+frasco de garbanzos de vidrio vacío,vidrio
+frasco de lentejas de vidrio vacío,vidrio
+frasco de alubias de vidrio vacío,vidrio
+frasco de maíz de vidrio vacío,vidrio
+frasco de tomate triturado de vidrio,vidrio
+frasco de salsa pesto de vidrio,vidrio
+frasco de mayonesa de vidrio vacío,vidrio
+frasco de mostaza de vidrio vacío,vidrio
+tarro de miel de vidrio vacío,vidrio
+tarro de mermelada de fresa vacío,vidrio
+tarro de mermelada de melocotón vacío,vidrio
+tarro de crema de cacao de vidrio vacío,vidrio
+tarro de café soluble de vidrio vacío,vidrio
+frasco de especias de vidrio vacío,vidrio
+frasco de colonia vacío de vidrio,vidrio
+frasco de cosmética de vidrio vacío,vidrio
+frasco de sérum de vidrio vacío,vidrio
+tarro de vela de vidrio vacío,vidrio
+botellita de licor de vidrio vacía,vidrio
+botella de agua de vidrio retornable vacía,vidrio
+tarro de pepinillos de vidrio vacío,vidrio
+frasco de comida infantil de vidrio vacío,vidrio
+tarro de conservas de vidrio limpio,vidrio
+botella de refresco de limón de vidrio,vidrio
+garrafa de agua de plástico vacía,envases
+garrafa de detergente de plástico vacía,envases
+garrafa de suavizante vacía,envases
+garrafa de aceite de plástico vacía,envases
+botella de lejía de plástico vacía,envases
+botella de limpiacristales vacía,envases
+botella de lavavajillas líquido vacía,envases
+botella de jabón de manos de plástico,envases
+botella de acondicionador de plástico vacía,envases
+bote de crema solar de plástico vacío,envases
+envase de pasta dental de plástico vacío,envases
+envase de gel de ducha vacío,envases
+envase de comida preparada de plástico,envases
+bandeja de plástico de una comida preparada,envases
+bandeja de plástico de verduras,envases
+tarrina de plástico de queso fresco,envases
+tarrina de plástico de mantequilla vacía,envases
+tarrina de plástico de fruta cortada,envases
+envoltorio de plástico de un paquete,envases
+bolsa de plástico de congelados vacía,envases
+bolsa de plástico de arroz vacía,envases
+bolsa de plástico de frutos secos vacía,envases
+bolsa de plástico de pan de molde vacía,envases
+bolsa de plástico de queso rallado vacía,envases
+paquete de plástico de galletas vacío,envases
+paquete de plástico de cereales vacío,envases
+bolsa de golosinas vacía de plástico,envases
+bolsa de patatas fritas vacía,envases
+paquete de café envasado vacío,envases
+film plástico de una bandeja de alimentos,envases
+film transparente de un envase,envases
+bandeja de aluminio de comida vacía,envases
+papel de aluminio limpio de envolver comida,envases
+lata vacía de maíz,envases
+lata vacía de guisantes,envases
+lata vacía de sardinas,envases
+lata vacía de aceitunas,envases
+lata vacía de comida para mascotas,envases
+lata vacía de bebida isotónica,envases
+brik vacío de bebida de avena,envases
+brik vacío de leche sin lactosa,envases
+piel de mango,orgánico
+piel de piña,orgánico
+piel de papaya,orgánico
+piel de ciruela,orgánico
+piel de nectarina,orgánico
+piel de albaricoque,orgánico
+piel de pomelo,orgánico
+piel de granada,orgánico
+restos de uvas,orgánico
+restos de cerezas,orgánico
+restos de fresas,orgánico
+restos de frutos rojos,orgánico
+restos de pepino,orgánico
+restos de berenjena,orgánico
+restos de brócoli,orgánico
+restos de coliflor,orgánico
+restos de apio,orgánico
+restos de puerro,orgánico
+restos de calabaza,orgánico
+restos de champiñones,orgánico
+restos de setas,orgánico
+restos de maíz cocido,orgánico
+mazorca de maíz,orgánico
+cáscaras de pistachos,orgánico
+cáscaras de almendras,orgánico
+cáscaras de cacahuetes,orgánico
+cáscara de coco en trozos pequeños,orgánico
+hueso de aceituna,orgánico
+hueso de cereza,orgánico
+hueso de ciruela,orgánico
+restos de pan de molde,orgánico
+restos de galletas,orgánico
+restos de bizcocho,orgánico
+restos de cereales,orgánico
+restos de pizza con comida,orgánico
+restos de sopa sólida,orgánico
+restos de puré de verduras,orgánico
+restos de pescado crudo,orgánico
+restos de carne cruda,orgánico
+cáscara de huevo triturada,orgánico
+huevo pasado que ya no se consume,orgánico
+restos de queso,orgánico
+restos de yogur sin envase,orgánico
+restos de comida del plato,orgánico
+hojas de alcachofa,orgánico
+hojas exteriores de col,orgánico
+tallos de verduras,orgánico
+flores naturales marchitas,orgánico
+hojas secas de plantas de interior,orgánico
+pañuelo de papel con mucosidad,resto
+papel de cocina sin restos orgánicos y usado,resto
+servilleta de papel usada sin restos de comida,resto
+bastoncillo de algodón con plástico,resto
+algodón desmaquillante usado,resto
+disco de algodón usado,resto
+hilo dental usado,resto
+cepillo interdental usado,resto
+maquinilla de afeitar desechable usada,resto
+esponja de baño vieja,resto
+estropajo metálico gastado,resto
+estropajo de fibra usado,resto
+guante de látex doméstico roto,resto
+guante de limpieza de goma roto,resto
+bolsa de aspiradora usada con polvo,resto
+filtro de cafetera usado de cápsula no reciclable,resto
+filtro de campana extractora usado,resto
+filtro de aspiradora usado,resto
+papel encerado sucio,resto
+papel de horno usado,resto
+papel carbón usado,resto
+papel adhesivo usado,resto
+etiqueta adhesiva despegada,resto
+pegatina usada sin soporte reciclable,resto
+cinta de embalar usada,resto
+cinta aislante usada,resto
+cordón roto de algodón,resto
+retal pequeño de tela sucia,resto
+calcetín viejo roto,resto
+ropa interior deteriorada,resto
+zapato muy desgastado no reutilizable,resto
+muñeco de plástico roto,resto
+figura decorativa de plástico rota,resto
+pieza de plástico que no es envase,resto
+tapa de plástico de un objeto no envase,resto
+percha rota de plástico,resto
+maceta de plástico rota,resto
+regla de plástico rota,resto
+carcasa de plástico rota,resto
+juguete pequeño sin componentes eléctricos roto,resto
+plato desechable muy sucio no envase,resto
+bandeja de comida muy sucia no envase,resto
+copa de cristal rota,resto
+vaso de cristal roto de beber,resto
+espejo pequeño roto envuelto,resto
+fragmento de ventana roto envuelto,resto
+plato de loza roto,resto
+azulejo pequeño roto,resto
+figura de porcelana rota,resto
+jarrón de cerámica roto,resto
+ceniza fría de tabaco,resto
+polvo de aspiradora,resto
+pelo recogido del cepillo,resto
+excremento de perro en bolsa,resto
+bombilla halógena,resto
+espejo roto,resto
+copa de cristal,resto
+fuente de horno de vidrio,resto
+tapón de corcho natural,resto
+jeringuilla doméstica usada,resto
+mascarilla desechable,resto
+guantes de látex usados,resto
+toallita húmeda,resto
+bastoncillo de algodón,resto
+hilo dental,resto
+cápsula de café compostable,resto
+ropa mojada o muy sucia,resto
+juguete de plástico sin pilas,resto
+cepillo de dientes,resto
+maquinilla desechable,resto
+cuchilla de afeitar,resto
+plato de porcelana,resto
+maceta de barro,resto
+tierra de macetas,resto
+papel de aluminio con mucha comida,resto
+papel de regalo metalizado,resto
+caja de pizza con grasa,resto
+sobre acolchado con burbujas,resto
+pañal de adulto,resto
+ceniza fría,resto
+chicle,resto
+cinta adhesiva,resto
+globo,resto
+aguja de coser,resto
+laca de uñas vacía,resto
+cerillas usadas,resto
+papel de charcutería plastificado,resto
+fotografía en papel,resto
+corona de flores artificial,resto
+bandeja de porexpan limpia,envases
+envase de yogur,envases
+spray desodorante vacío,envases
+tapón de plástico de botella,envases
+tapón de corcho sintético,envases
+envase de cartón de leche,envases
+red de frutas,envases
+malla de patatas,envases
+tapón metálico de botella,envases
+envase de lejía vacío,envases
+bolsa de plástico de supermercado,envases
+caja de huevos de plástico,envases
+bandeja de carne de poliestireno,envases
+envase de comida con restos,envases
+lata de conserva con restos,envases
+caja de medicamento de cartón,papel y cartón
+caja de pizza limpia,papel y cartón
+papel de cocina limpio,papel y cartón
+cartón grande de embalaje,papel y cartón
+caja de cerillas,papel y cartón
+caja de huevos de cartón,papel y cartón
+papel de periódico mojado,papel y cartón
+libro viejo,papel y cartón
+restos de comida cocinada,orgánico
+bolsa de té sin grapa,orgánico
+servilleta de papel sucia de comida,orgánico
+huesos grandes,orgánico
+concha de mejillón,orgánico
+papel de cocina con aceite o comida,orgánico
+bolsa compostable certificada,orgánico
+restos de poda pequeños,orgánico
+frasco de perfume vacío,vidrio
+tarro de conservas,vidrio
+restos de patata,orgánico
+restos de melón,orgánico
+restos de sandía,orgánico
+restos de aguacate,orgánico
+restos de pan,orgánico
+restos de pollo,orgánico
+restos de sopa,orgánico
+restos de pizza,orgánico
+restos de legumbres,orgánico
+restos de verduras cocidas,orgánico
+hojas verdes,orgánico
+ramitas de planta,orgánico
+tallos de verdura,orgánico
+papel de regalo,papel y cartón
+papel de envolver,papel y cartón
+cartón de embalaje,papel y cartón
+caja de cartón vacía,papel y cartón
+caja de cartón usada,papel y cartón
+envoltorio de papel,papel y cartón
+papel de revista,papel y cartón
+papel de cartulina,papel y cartón
+cartulina de colores,papel y cartón
+papel de cuaderno usado,papel y cartón
+hojas de cuaderno usado,papel y cartón
+hojas de papel usadas,papel y cartón
+folleto publicitario,papel y cartón
+periódico viejo,papel y cartón
+revista vieja,papel y cartón
+catálogo en papel,papel y cartón
+bolsa de papel,papel y cartón
+tubo de cartón vacía,papel y cartón
+tubo de cartón usado,papel y cartón
+papel kraft,papel y cartón
+papel de dibujo,papel y cartón
+papel de impresión,papel y cartón
+papel reciclado,papel y cartón
+tomate,orgánico
+sandía,orgánico
+banana,orgánico
+papaya,orgánico
+mango,orgánico
+melocotón,orgánico
+durazno,orgánico
+aguacate,orgánico
+acelga,orgánico
+repollo,orgánico
+lata de refresco vacía,envases
+envase de comida para llevar de plástico,envases
+bandeja de aluminio limpia,envases
+tapa de lata,envases
+frasco de cristal vacío,vidrio
+tarro de cristal vacío,vidrio
+botella de cristal vacía,vidrio
+frasco de colonia vacío,vidrio
+cartón limpio,papel y cartón
+papel limpio,papel y cartón
+caja de cereales vacía,papel y cartón
+toallita usada,resto
+vaso roto,resto
+juguete de plástico roto,resto
+colilla apagada,resto
+lata de atún vacía,envases
+lata de sardinas vacía,envases
+lata de tomate vacía,envases
+lata de bebida energética vacía,envases
+botella de champú vacía,envases
+bote de detergente vacío,envases
+brik de zumo vacío,envases
+envoltorio de galletas vacío,envases
+bandeja de plástico de comida vacía,envases
+botella de plástico de aceite vacía,envases
+envase de yogur vacío de plástico,envases
+lata de comida para mascotas vacía,envases
+botella de agua de plástico vacía,envases
+tarro de aceitunas vacío de vidrio,vidrio
+frasco de miel vacío de vidrio,vidrio
+botella de vinagre vacía de vidrio,vidrio
+frasco de especias vacío de vidrio,vidrio
+botella de agua vacía de vidrio,vidrio
+tarro de café soluble vacío de vidrio,vidrio
+frasco de salsa vacío de vidrio,vidrio
+botella de vermut vacía de vidrio,vidrio
+tarro de conservas vacío de vidrio,vidrio
+botella de refresco de vidrio vacía,vidrio
+papel de impresora limpio,papel y cartón
+sobre de papel usado,papel y cartón
+caja de cartón de zapatos limpia,papel y cartón
+hojas de apuntes usadas,papel y cartón
+caja de cartón plegada,papel y cartón
+bolsa de papel limpia de compra,papel y cartón
+libreta usada de papel,papel y cartón
+cepillo de pelo roto,resto
+rotulador gastado,resto
+guante de goma roto,resto
+esponja de cocina vieja,resto
+plato de cerámica roto,resto
+restos de huevo revuelto,orgánico
+restos de pescado del plato,orgánico
+cáscara de huevo cocida,orgánico
+piel de calabacín,orgánico
+restos de pollo cocinado,orgánico
+huesos de pollo cocinados,orgánico
+restos de lentejas cocinadas,orgánico
+restos de garbanzos cocidos,orgánico
+restos de ensalada,orgánico
+restos de fruta cortada,orgánico
+posos de té usados,orgánico
+restos de atún,orgánico
+espinas de atún,orgánico
