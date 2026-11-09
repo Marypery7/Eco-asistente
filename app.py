@@ -14,19 +14,21 @@ DATASET_PATH = BASE_DIR / "datos" / "dataset_eco_asistente.csv"
 
 # Traducimos las etiquetas del modelo a nombres de contenedores fáciles de entender.
 NOMBRES_CONTENEDOR = {
-    "papel y cartón": "contenedor azul (papel y cartón)",
-    "vidrio": "contenedor verde (vidrio)",
-    "envases": "contenedor amarillo (envases ligeros)",
-    "orgánico": "contenedor marrón (biorresiduos)",
-    "resto": "contenedor de resto",
+    "amarillo": "contenedor amarillo (envases ligeros)",
+    "azul": "contenedor azul (papel y cartón)",
+    "gris": "contenedor gris (resto)",
+    "marron": "contenedor marrón (biorresiduos)",
+    "punto_limpio": "punto limpio (residuo especial o específico)",
+    "verde": "contenedor verde (vidrio)",
 }
 
 CONSEJOS = {
-    "papel y cartón": "Deposítalo limpio y, si es una caja, pliégala.",
-    "vidrio": "Vacía el envase y separa tapas o tapones cuando corresponda.",
-    "envases": "Vacía el envase antes de depositarlo.",
-    "orgánico": "Deposita solo residuos orgánicos admitidos por el servicio local.",
-    "resto": "Esta categoría es para residuos domésticos no incluidos en las fracciones selectivas.",
+    "amarillo": "Vacía el envase antes de depositarlo; las normas concretas pueden variar localmente.",
+    "azul": "Deposítalo limpio y, si es una caja, pliégala.",
+    "gris": "Esta fracción es para residuos domésticos no recogidos separadamente.",
+    "marron": "Deposita solo biorresiduos admitidos por el servicio local.",
+    "punto_limpio": "Consulta el punto limpio de tu municipio para conocer las condiciones de entrega.",
+    "verde": "Deposita envases de vidrio; separa tapas y tapones cuando corresponda.",
 }
 
 
