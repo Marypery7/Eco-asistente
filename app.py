@@ -90,7 +90,7 @@ def cargar_recursos():
     return datos, modelo_final, exactitud, matriz, sorted(etiquetas.unique()), resultados
 
 
-st.set_page_config(page_title="Eco-asistente", page_icon="♻️")
+st.set_page_config(page_title="Eco-asistente", page_icon="")
 st.session_state.setdefault("sesion_cerrada", False)
 
 
@@ -106,7 +106,7 @@ if st.session_state["sesion_cerrada"]:
     st.info("Tus datos de esta sesión se han borrado. Para apagar la aplicación local, pulsa Ctrl+C en la terminal donde ejecutaste Streamlit.")
     st.stop()
 
-st.title("♻️ Eco-asistente")
+st.title("Eco-asistente")
 st.write("Escribe el nombre de un residuo y te indicaré su categoría de reciclaje estimada.")
 st.caption("Ejemplos: botella de plástico · frasco de vidrio · cuaderno de papel")
 
