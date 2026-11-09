@@ -267,7 +267,17 @@ st.markdown(
     [data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
         color: #1C2D25 !important;
     }
-    [data-testid="stExpander"] { border: 1px solid #dce6dd; border-radius: 16px; background: rgba(255,255,255,.75); }
+    [data-testid="stExpander"] { border: 1px solid #dce6dd; border-radius: 16px; background: #FFFFFF; overflow: hidden; }
+    [data-testid="stExpander"] details > summary {
+        background: #EDF4ED !important; color: #245B46 !important;
+        border-radius: 15px; font-weight: 700;
+    }
+    [data-testid="stExpander"] details > summary p,
+    [data-testid="stExpander"] details > summary span,
+    [data-testid="stExpander"] details > summary svg {
+        color: #245B46 !important; fill: #245B46 !important;
+    }
+    [data-testid="stExpander"] details[open] > summary { border-bottom: 1px solid #DCE6DD; border-radius: 15px 15px 0 0; }
     h2, h3 { color: var(--eco-forest); }
     .eco-footer { color: #718077; font-size: .78rem; text-align: center; padding-top: .5rem; }
     </style>

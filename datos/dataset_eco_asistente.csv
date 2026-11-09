@@ -1,4 +1,4 @@
-﻿residuo,categoria
+residuo,categoria
 cuaderno de papel,papel y cartón
 cuaderno usado,papel y cartón
 periódico de papel,papel y cartón
@@ -54,16 +54,12 @@ cáscara de calabaza,orgánico
 restos de tomate,orgánico
 restos de pimiento,orgánico
 restos de cebolla,orgánico
-hoja de papel,papel y cartón
-hoja de cuaderno,papel y cartón
 hoja de folio,papel y cartón
 hoja de impresora,papel y cartón
 hoja de revista,papel y cartón
 papel de cuaderno,papel y cartón
 hoja de bloc,papel y cartón
 cartón de caja,papel y cartón
-folleto de papel,papel y cartón
-sobre de papel,papel y cartón
 revista de moda,papel y cartón
 folleto publicitario de papel,papel y cartón
 manual de instrucciones de papel,papel y cartón
@@ -214,8 +210,6 @@ cáscara de limón,orgánico
 cáscara de melón,orgánico
 cáscara de sandía,orgánico
 hueso de aguacate,orgánico
-restos de tomate,orgánico
-restos de cebolla,orgánico
 restos de zanahoria,orgánico
 restos de calabacín,orgánico
 hojas de espinaca,orgánico
@@ -434,7 +428,6 @@ restos de cerezas,orgánico
 restos de fresas,orgánico
 restos de frutos rojos,orgánico
 restos de pepino,orgánico
-restos de pimiento,orgánico
 restos de berenjena,orgánico
 restos de brócoli,orgánico
 restos de coliflor,orgánico
@@ -593,78 +586,25 @@ bolsa compostable certificada,orgánico
 restos de poda pequeños,orgánico
 frasco de perfume vacío,vidrio
 tarro de conservas,vidrio
-hoja de planta,orgánico
-hojas de planta,orgánico
-restos de vegetales,orgánico
-vegetales,orgánico
-verduras,orgánico
-restos de verduras,orgánico
-verdura cocinada,orgánico
-tallos de planta,orgánico
-hoja de lechuga,orgánico
-restos de hortalizas,orgánico
-hojas de ensalada,orgánico
-hoja de espinaca,orgánico
-cáscara de calabaza,orgánico
-restos de tomate,orgánico
-restos de pimiento,orgánico
-restos de cebolla,orgánico
-restos de zanahoria,orgánico
-restos de calabacín,orgánico
 restos de patata,orgánico
-cáscara de patata,orgánico
-restos de fruta,orgánico
-piel de naranja,orgánico
-piel de manzana,orgánico
-piel de pera,orgánico
-piel de kiwi,orgánico
-restos de manzana,orgánico
 restos de melón,orgánico
 restos de sandía,orgánico
-cáscara de plátano,orgánico
 restos de aguacate,orgánico
-hueso de aguacate,orgánico
-restos de arroz,orgánico
-restos de pasta,orgánico
 restos de pan,orgánico
-pan duro,orgánico
-restos de comida,orgánico
-restos de carne cocinada,orgánico
-restos de pescado cocinado,orgánico
 restos de pollo,orgánico
-restos de carne cruda,orgánico
-restos de pescado crudo,orgánico
-posos de café,orgánico
-papel de cocina sucio,orgánico
-servilleta sucia de comida,orgánico
-bolsa de té usada,orgánico
-espinas de pescado,orgánico
 restos de sopa,orgánico
-restos de tortilla,orgánico
 restos de pizza,orgánico
 restos de legumbres,orgánico
 restos de verduras cocidas,orgánico
 hojas verdes,orgánico
 ramitas de planta,orgánico
 tallos de verdura,orgánico
-hoja de papel,papel y cartón
-hoja de cuaderno,papel y cartón
-hoja de folio,papel y cartón
-hoja de impresora,papel y cartón
-hoja de revista,papel y cartón
-papel de cuaderno,papel y cartón
-hoja de bloc,papel y cartón
-cartón de caja,papel y cartón
-folleto de papel,papel y cartón
-sobre de papel,papel y cartón
 papel de regalo,papel y cartón
 papel de envolver,papel y cartón
 cartón de embalaje,papel y cartón
 caja de cartón vacía,papel y cartón
 caja de cartón usada,papel y cartón
-caja de cartón limpia,papel y cartón
 envoltorio de papel,papel y cartón
-papel de periódico,papel y cartón
 papel de revista,papel y cartón
 papel de cartulina,papel y cartón
 cartulina de colores,papel y cartón
@@ -672,20 +612,14 @@ papel de cuaderno usado,papel y cartón
 hojas de cuaderno usado,papel y cartón
 hojas de papel usadas,papel y cartón
 folleto publicitario,papel y cartón
-postal de papel,papel y cartón
 periódico viejo,papel y cartón
 revista vieja,papel y cartón
 catálogo en papel,papel y cartón
-carpeta de cartón,papel y cartón
 bolsa de papel,papel y cartón
-caja de huevos de cartón,papel y cartón
-caja de cereales de cartón,papel y cartón
 tubo de cartón vacía,papel y cartón
 tubo de cartón usado,papel y cartón
 papel kraft,papel y cartón
-papel de envolver sin plastificar,papel y cartón
 papel de dibujo,papel y cartón
-papel de oficina,papel y cartón
 papel de impresión,papel y cartón
 papel reciclado,papel y cartón
 tomate,orgánico
