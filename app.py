@@ -233,13 +233,25 @@ st.markdown(
     .eco-hero h1 { color: var(--eco-forest); font-size: clamp(2rem, 5vw, 3rem); line-height: 1.05; margin: 0 0 .55rem 0; font-weight: 800; }
     .eco-hero p { color: var(--eco-muted); font-size: 1rem; margin: 0; }
     [data-testid="stVerticalBlockBorderWrapper"] { border-color: #dce6dd !important; border-radius: 18px !important; background: rgba(255,255,255,.86); box-shadow: 0 7px 22px rgba(38, 75, 52, .045); }
-    [data-testid="stTextInputRootElement"] input {
-        min-height: 3rem; border-radius: 12px; border-color: #c9d8cb;
-        background: #fff !important; color: var(--eco-ink) !important;
-        -webkit-text-fill-color: var(--eco-ink) !important; font-size: 1rem;
+    [data-testid="stTextInputRootElement"] > div,
+    [data-testid="stTextInputRootElement"] [data-baseweb="input"] {
+        background-color: #FFFFFF !important; border-color: #C9D8CB !important;
     }
-    [data-testid="stTextInputRootElement"] input::placeholder {
-        color: #78877d !important; -webkit-text-fill-color: #78877d !important; opacity: 1;
+    [data-testid="stTextInputRootElement"] input,
+    [data-testid="stTextInput"] input {
+        min-height: 3rem; border-radius: 12px;
+        background-color: #FFFFFF !important; color: #1C2D25 !important;
+        -webkit-text-fill-color: #1C2D25 !important; caret-color: #1C2D25 !important;
+        font-size: 1rem;
+    }
+    [data-testid="stTextInputRootElement"] input::placeholder,
+    [data-testid="stTextInput"] input::placeholder {
+        color: #78877D !important; -webkit-text-fill-color: #78877D !important; opacity: 1;
+    }
+    [data-testid="stTextInput"] label,
+    [data-testid="stTextInput"] label p,
+    [data-testid="stWidgetLabel"] p {
+        color: #1C2D25 !important; -webkit-text-fill-color: #1C2D25 !important;
     }
     [data-testid="stTextInputRootElement"] input:focus { border-color: var(--eco-leaf); box-shadow: 0 0 0 .15rem rgba(57,123,91,.14); }
     [data-testid="stBaseButton-primary"] {
@@ -403,6 +415,71 @@ def mostrar_resultado(categoria, tipo_detectado=None):
                 unsafe_allow_html=True,
             )
             st.write(CONSEJOS.get(categoria, "Consulta las instrucciones de separación locales."))
+
+
+def explicar_decision(residuo, categoria, modelo, datos):
+    texto = str(residuo or "").strip().lower()
+    coincidencias = datos[datos["residuo"].str.strip().str.lower() == texto]
+    if not coincidencias.empty:
+        return (
+            "Coincidencia exacta con el CSV",
+            f'La descripción aparece en el CSV principal con la etiqueta "{coincidencias.iloc[0]["categoria"]}". Para esta consulta no hizo falta que el modelo generalizara.',
+        )
+
+    normalizado = normalizar_texto(texto)
+    terminos_especiales = (
+        "pila", "bateria", "medicamento", "jeringuilla", "aparato electrico",
+        "electrodomestico", "ordenador", "portatil", "laptop", "movil",
+        "telefono", "bombilla", "fluorescente", "punto limpio"
+    )
+    termino_especial = next((t for t in terminos_especiales if t in normalizado), None)
+    if termino_especial:
+        return "Regla para residuos especiales", f'La regla de la app reconoce "{termino_especial}" y recomienda revisar el punto limpio.'
+
+    palabras_envase = ("botella", "envase", "frasco", "tarro", "bote", "bandeja", "bolsa", "paquete")
+    menciona_envase = any(contiene_termino(normalizado, p) for p in palabras_envase)
+    menciona_vidrio = any(contiene_termino(normalizado, p) for p in ("vidrio", "cristal"))
+    menciona_ligero = any(contiene_termino(normalizado, p) for p in ("plastico", "metal", "aluminio", "brik"))
+    if categoria == MENSAJE_MATERIAL_INDEFINIDO:
+        return "Aclaración pendiente", "La descripción parece referirse a una bebida o a un envase, pero falta indicar qué se va a tirar o de qué material es. Todavía no se ha asignado una categoría."
+    if menciona_envase and (menciona_vidrio or menciona_ligero):
+        return "Regla del material del envase", "La app usa el material escrito: vidrio/cristal corresponde a vidrio; plástico, metal/aluminio o brik corresponde a envases."
+    if contiene_termino(normalizado, "lata") or contiene_termino(normalizado, "brik"):
+        return "Regla del tipo de envase", "La app reconoce una lata o un brik como envase ligero y lo asigna a envases."
+    if detectar_tipo_fruta_vegetal(texto):
+        tipo = detectar_tipo_fruta_vegetal(texto)
+        return "Lista explícita de frutas y vegetales", f'La palabra coincide con la lista programada de "{tipo}" y esa regla la asigna a orgánico. Esta respuesta no procede del modelo entrenado.'
+
+    palabras_conocidas = {
+        palabra
+        for palabras in PALABRAS_CLAVE_CATEGORIA.values()
+        for palabra in palabras
+    }
+    tiene_pista = any(
+        normalizar_texto(palabra) in normalizado for palabra in palabras_conocidas
+    )
+    if not tiene_pista:
+        return "Sin coincidencia suficiente", "La app no encontró una frase exacta ni una palabra clave que active el modelo. El aviso de punto limpio es una salida de seguridad de la app, no una predicción aprendida para este producto."
+
+    vectorizador = modelo.named_steps["countvectorizer"]
+    clasificador = modelo.named_steps["logisticregression"]
+    vector = vectorizador.transform([texto])
+    indice_categoria = list(clasificador.classes_).index(categoria)
+    nombres = vectorizador.get_feature_names_out()
+    pesos = clasificador.coef_[indice_categoria]
+    contribuciones = [
+        (nombres[indice], float(vector[0, indice] * pesos[indice]))
+        for indice in vector[0].indices
+        if pesos[indice] > 0
+    ]
+    contribuciones.sort(key=lambda item: item[1], reverse=True)
+    terminos = [palabra for palabra, _ in contribuciones[:4]]
+    if terminos:
+        evidencia = ", ".join(f'"{palabra}"' for palabra in terminos)
+        explicacion = f'El modelo usó palabras presentes en la descripción que tienen peso positivo para "{categoria}": {evidencia}. Aprendió esas asociaciones de los ejemplos del CSV.'
+    else:
+        explicacion = f'El modelo comparó las palabras de la descripción con los patrones aprendidos y eligió "{categoria}". No encontró una palabra individual con peso positivo claro para mostrar.'
+    return "Modelo de texto", explicacion
 
 
 if st.session_state["sesion_cerrada"]:
@@ -593,6 +670,34 @@ with st.expander("Ver análisis de datos y evaluación del modelo"):
     )
     st.altair_chart(grafico_matriz, use_container_width=True)
     st.caption("La evaluación es inicial: el dataset es pequeño y las normas pueden variar según el municipio.")
+
+with st.container(border=True):
+    st.subheader("Explora la decisión")
+    st.caption("Escribe un producto para ver la categoría y qué camino usó la app: CSV, regla o modelo.")
+    producto_explicacion = st.text_input(
+        "Producto para explicar",
+        placeholder="Ej.: pan de molde viejo",
+        key="producto_explicacion",
+    )
+    if st.button("¿Cómo lo clasificó?", key="explicar_producto", use_container_width=True):
+        if not producto_explicacion.strip():
+            st.warning("Escribe un producto para analizar la decisión.")
+        else:
+            categoria_explicacion = detectar_categoria_o_punto_limpio(
+                producto_explicacion, modelo, datos
+            )
+            ruta, detalle = explicar_decision(
+                producto_explicacion, categoria_explicacion, modelo, datos
+            )
+            st.markdown(f"**Ruta usada:** {ruta}")
+            if categoria_explicacion == MENSAJE_MATERIAL_INDEFINIDO:
+                st.info(detalle)
+            else:
+                mostrar_resultado(
+                    categoria_explicacion,
+                    detectar_tipo_fruta_vegetal(producto_explicacion),
+                )
+                st.write(f"**Qué influyó:** {detalle}")
 
 st.markdown('<div class="eco-footer">Proyecto educativo · Orientación de reciclaje</div>', unsafe_allow_html=True)
 

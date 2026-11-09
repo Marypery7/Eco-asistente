@@ -1,4 +1,4 @@
-residuo,categoria
+﻿residuo,categoria
 cuaderno de papel,papel y cartón
 cuaderno usado,papel y cartón
 periódico de papel,papel y cartón
@@ -647,3 +647,51 @@ toallita usada,resto
 vaso roto,resto
 juguete de plástico roto,resto
 colilla apagada,resto
+lata de atún vacía,envases
+lata de sardinas vacía,envases
+lata de tomate vacía,envases
+lata de bebida energética vacía,envases
+botella de champú vacía,envases
+bote de detergente vacío,envases
+brik de zumo vacío,envases
+envoltorio de galletas vacío,envases
+bandeja de plástico de comida vacía,envases
+botella de plástico de aceite vacía,envases
+envase de yogur vacío de plástico,envases
+lata de comida para mascotas vacía,envases
+botella de agua de plástico vacía,envases
+tarro de aceitunas vacío de vidrio,vidrio
+frasco de miel vacío de vidrio,vidrio
+botella de vinagre vacía de vidrio,vidrio
+frasco de especias vacío de vidrio,vidrio
+botella de agua vacía de vidrio,vidrio
+tarro de café soluble vacío de vidrio,vidrio
+frasco de salsa vacío de vidrio,vidrio
+botella de vermut vacía de vidrio,vidrio
+tarro de conservas vacío de vidrio,vidrio
+botella de refresco de vidrio vacía,vidrio
+papel de impresora limpio,papel y cartón
+sobre de papel usado,papel y cartón
+caja de cartón de zapatos limpia,papel y cartón
+hojas de apuntes usadas,papel y cartón
+caja de cartón plegada,papel y cartón
+bolsa de papel limpia de compra,papel y cartón
+libreta usada de papel,papel y cartón
+cepillo de pelo roto,resto
+rotulador gastado,resto
+guante de goma roto,resto
+esponja de cocina vieja,resto
+plato de cerámica roto,resto
+restos de huevo revuelto,orgánico
+restos de pescado del plato,orgánico
+cáscara de huevo cocida,orgánico
+piel de calabacín,orgánico
+restos de pollo cocinado,orgánico
+huesos de pollo cocinados,orgánico
+restos de lentejas cocinadas,orgánico
+restos de garbanzos cocidos,orgánico
+restos de ensalada,orgánico
+restos de fruta cortada,orgánico
+posos de té usados,orgánico
+restos de atún,orgánico
+espinas de atún,orgánico
